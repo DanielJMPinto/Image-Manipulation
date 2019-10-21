@@ -20,18 +20,21 @@ Matrix * CreateMat(int rows, int columns)
 
 Matrix * LoadFromFile(char *name)
 {
-    printf("%s", "ola");
+
+    printf("%s \n", "wow. it got to this point");
     FILE *fp = fopen(name, "rb");
 
     
-    char width, height, max_color;
-    char buffer[2];
-    
-    fscanf(fp, "%s", &width);
-    printf("%s", buffer);
-    fscanf(fp, "%s", &height);
-    fscanf(fp, "%s", &max_color);
+    int width, height, max_color;
+    char buffer[10];
 
+	fgets(buffer, 10, fp);
+	printf("%s \n", buffer);
+	fscanf(fp, "%d %d", &width, &height);
+	printf("%d %d \n", width, height);
+	
+    fscanf(fp, "%d", &max_color);
+	printf("%d \n", max_color);
     
 
     Matrix *tmp = CreateMat(width, height);
