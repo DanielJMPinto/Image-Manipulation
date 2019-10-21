@@ -35,7 +35,8 @@ Matrix * LoadFromFile(char *name)
 	
     fscanf(fp, "%d", &max_color);
 	printf("%d \n", max_color);
-    
+    fgets(buffer, 10, fp);
+	printf("%s \n", buffer);
 
     Matrix *tmp = CreateMat(width, height);
     fread(tmp->data, 3 * tmp->width, tmp->height, fp);
@@ -47,26 +48,24 @@ void SaveOnFile(Matrix *dm, char *name)
 {
     FILE *fp = fopen(name, "wb");
 
-    fwrite(&(dm->n), sizeof(int), 1, fp);
+    fprintf(fp, "P6\n");
+    fprintf(fp, "%d %d\n", dm->width,dm->height);
+    fprintf(fp, "%d\n",255);
+    //fwrite(&(dm->n), sizeof(int), 1, fp);
 
-    fwrite(dm->data, sizeof(int), dm->n, fp);
+    fwrite(dm->data, 3*dm->width,dm->height, fp);
 }
 
 void PrintMat(Matrix *dm)
 {
 
-    ImageRGB * array_ptr = dm->data;
+    ImageRGB * px = dm->data;
 
     for(int i = 0; i <= dm->size; i++){
-        PrintRGB(array_ptr);
-        array_ptr++;
+        printf("[ %d, %d, %d ]", px->r, px->g, px->b);
+        
+        px++;
     }
 
     printf("\n");
-}
-
-void PrintRGB(ImageRGB *px){
-
-    printf("[ %d, %d, %d ]", px->r, px->g, px->b);
-
 }

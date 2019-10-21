@@ -13,7 +13,9 @@ int main(int argc, char** argv[])
 	printf("%s \n", "every time a seg fault happens, my life is shorten by a day");
 	Matrix *dm = LoadFromFile(filename);
     PrintMat(dm);
+	SaveOnFile(dm, "teste_salvar.ppm");
     return 0;
+
 	
 	/*;
 	
