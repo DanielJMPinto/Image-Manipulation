@@ -1,16 +1,20 @@
 #include <stdio.h>
 #include "imageRGB.h"
 
-int main(int argc, char **argv)
+int main(void)
 {	
 	
 	/*struct RGBPixel pixel1 = createRGBpixel(32,64,129);
 	
 	printf("pixel1 is %d, %d, %d \n", pixel1.r, pixel1.g, pixel1.b);*/
-
 	
+	//printf("%s", argv[1]);
+	printf("%s", "argv[1]");
+	Matrix *dm = LoadFromFile("lena.ppm");
+    PrintMat(dm);
+    return 0; 
 	
-	char *filename = argv[1];
+	/*char *filename = argv[1];
 	printf("%s \n", filename);
 	
 	FILE *fp;
@@ -35,7 +39,7 @@ int main(int argc, char **argv)
 	printf("%u %u %u\n", pixel.r, pixel.g, pixel.b);
 	
 	
-	return 0;
+	return 0;*/
 }
 
 

@@ -1,7 +1,7 @@
 all: ppmtesting
 
-ppmtesting: imageRGB.o ppmtesting.o
-	gcc -o ppmtesting ppmtesting.o imageRGB.o
+ppmtesting: imageRGB.c ppmtesting.c
+	gcc -o imageRGB imageRGB.c ppmtesting.c -I.
 
 
 ppmtesting.o: ppmtesting.c
