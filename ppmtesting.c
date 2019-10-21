@@ -14,6 +14,7 @@ int main(void)
     PrintMat(dm);
     return 0; 
 	
+	
 	/*char *filename = argv[1];
 	printf("%s \n", filename);
 	

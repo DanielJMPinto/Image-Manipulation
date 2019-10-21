@@ -13,7 +13,6 @@ Matrix * CreateMat(int rows, int columns)
 
     tmp->size = rows*columns;
     
-
     tmp->data = (ImageRGB *)calloc(tmp->size, sizeof(int));
 
     return tmp;
