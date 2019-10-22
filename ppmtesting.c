@@ -2,6 +2,10 @@
 #include "imageRGB.h"
 #include "imageGS.h"
 
+/**
+ * @brief Main program 
+ */
+
 int main(int argc, char** argv[])
 {	
 	
@@ -10,9 +14,9 @@ int main(int argc, char** argv[])
 	printf("pixel1 is %d, %d, %d \n", pixel1.r, pixel1.g, pixel1.b);*/
 
 	char *filename = argv[1];
-	printf("%s \n", filename);
-	printf("%s \n", "every time a seg fault happens, my life is shorten by a day");
-	MatrixRGB *dm = loadFile(filename);
+	//printf("%s \n", filename);
+	//printf("%s \n", "every time a seg fault happens, my life is shorten by a day");
+	MatrixRGB *dm = loadFileRGB(filename);
     color2gray(dm, "salvar_gs.pgm");
 	saveFileRGB(dm, "salvar_rgb.ppm");
     return 0;

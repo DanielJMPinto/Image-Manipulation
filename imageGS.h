@@ -12,4 +12,6 @@ typedef struct {
 
 MatrixGS * createMatrixGS(int rows, int columns);
 
+MatrixGS * loadFileGS(char *name);
+
 void saveFileGS(MatrixGS *gs, char *name);

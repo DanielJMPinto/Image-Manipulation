@@ -14,7 +14,7 @@ typedef struct {
 
 MatrixRGB * createMatrixRGB(int rows, int columns);
 
-MatrixRGB * loadFile(char *);
+MatrixRGB * loadFileRGB(char *);
 
 void saveFileRGB(MatrixRGB *v, char *name);
 

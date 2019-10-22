@@ -19,10 +19,10 @@ MatrixRGB * createMatrixRGB(int rows, int columns)
     return rgb;
 }
 
-MatrixRGB * loadFile(char *name)
+MatrixRGB * loadFileRGB(char *name)
 {
 
-    printf("%s \n", "wow. it got to this point");
+    //printf("%s \n", "wow. it got to this point");
     FILE *fp = fopen(name, "rb");
 
     
@@ -30,14 +30,14 @@ MatrixRGB * loadFile(char *name)
     char buffer[10];
 
 	fgets(buffer, 10, fp);
-	printf("%s \n", buffer);
+	//printf("%s \n", buffer);
 	fscanf(fp, "%d %d", &width, &height);
-	printf("%d %d \n", width, height);
+	//printf("%d %d \n", width, height);
 	
     fscanf(fp, "%d", &max_color);
-	printf("%d \n", max_color);
+	//printf("%d \n", max_color);
     fgets(buffer, 10, fp);
-	printf("%s \n", buffer);
+	//printf("%s \n", buffer);
 
     MatrixRGB *rgb = createMatrixRGB(width, height);
     fread(rgb->data, 3 * rgb->width, rgb->height, fp);
@@ -64,15 +64,33 @@ void color2gray(MatrixRGB *rgb, char *name)
     MatrixGS * gs = createMatrixGS(rgb->width, rgb->height);
     ImageGS * px2 = gs->data;
 
+    MatrixGS * gs_r = createMatrixGS(rgb->width, rgb->height);
+    ImageGS * px2_r = gs_r->data;
+
+    MatrixGS * gs_g = createMatrixGS(rgb->width, rgb->height);
+    ImageGS * px2_g = gs_g->data;
+
+    MatrixGS * gs_b = createMatrixGS(rgb->width, rgb->height);
+    ImageGS * px2_b = gs_b->data;
+
     for(int i = 0; i <= gs->size; i++){
         px2->g = px->r * 0.3 + px->g * 0.58 + px->b * 0.11;
-        printf("[ %d ]", px2->g);
+        px2_r->g = px->r;
+        px2_g->g = px->g;
+        px2_b->g = px->b;
+        //printf("[ %d ]", px2->g);
         
         px++;
         px2++;
+        px2_r++;
+        px2_g++;
+        px2_b++;
     }
     printf("\n");
     saveFileGS(gs, name);
+    saveFileGS(gs_r, "salvar_gray_r.pgm");
+    saveFileGS(gs_g, "salvar_gray_g.pgm");
+    saveFileGS(gs_b, "salvar_gray_b.pgm");
 }
 
 void printMatrix(MatrixRGB *rgb)
