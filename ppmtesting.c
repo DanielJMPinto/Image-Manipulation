@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "imageRGB.h"
+#include "imageGS.h"
 
 int main(int argc, char** argv[])
 {	
