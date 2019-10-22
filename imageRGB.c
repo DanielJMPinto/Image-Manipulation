@@ -1,24 +1,25 @@
 #include "imageRGB.h"
+#include "imageGS.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-Matrix * CreateMat(int rows, int columns)
+MatrixRGB * createMatrixRGB(int rows, int columns)
 {
-    Matrix *tmp;
+    MatrixRGB *rgb;
 
-    tmp = (Matrix*)malloc(sizeof(Matrix));
-    tmp->n = 0;
-    tmp->width=rows;
-    tmp->height=columns;
+    rgb = (MatrixRGB*)malloc(sizeof(MatrixRGB));
+    rgb->n = 0;
+    rgb->width=rows;
+    rgb->height=columns;
 
-    tmp->size = rows*columns;
+    rgb->size = rows*columns;
     
-    tmp->data = (ImageRGB *)calloc(tmp->size, sizeof(int));
+    rgb->data = (ImageRGB *)calloc(rgb->size, sizeof(int));
 
-    return tmp;
+    return rgb;
 }
 
-Matrix * LoadFromFile(char *name)
+MatrixRGB * loadFile(char *name)
 {
 
     printf("%s \n", "wow. it got to this point");
@@ -38,30 +39,48 @@ Matrix * LoadFromFile(char *name)
     fgets(buffer, 10, fp);
 	printf("%s \n", buffer);
 
-    Matrix *tmp = CreateMat(width, height);
-    fread(tmp->data, 3 * tmp->width, tmp->height, fp);
+    MatrixRGB *rgb = createMatrixRGB(width, height);
+    fread(rgb->data, 3 * rgb->width, rgb->height, fp);
 
-    return tmp;
+    return rgb;
 }
 
-void SaveOnFile(Matrix *dm, char *name)
+void saveFileRGB(MatrixRGB *rgb, char *name)
 {
     FILE *fp = fopen(name, "wb");
 
     fprintf(fp, "P6\n");
-    fprintf(fp, "%d %d\n", dm->width,dm->height);
+    fprintf(fp, "%d %d\n", rgb->width,rgb->height);
     fprintf(fp, "%d\n",255);
-    //fwrite(&(dm->n), sizeof(int), 1, fp);
+    //fwrite(&(rgb->n), sizeof(int), 1, fp);
 
-    fwrite(dm->data, 3*dm->width,dm->height, fp);
+    fwrite(rgb->data, 3*rgb->width,rgb->height, fp);
 }
 
-void PrintMat(Matrix *dm)
+void color2gray(MatrixRGB *rgb, char *name)
+{
+    ImageRGB * px = rgb->data;
+
+    MatrixGS * gs = createMatrixGS(rgb->width, rgb->height);
+    ImageGS * px2 = gs->data;
+
+    for(int i = 0; i <= gs->size; i++){
+        px2->g = px->r * 0.3 + px->g * 0.58 + px->b * 0.11;
+        printf("[ %d ]", px2->g);
+        
+        px++;
+        px2++;
+    }
+    printf("\n");
+    saveFileGS(gs, name);
+}
+
+void printMatrix(MatrixRGB *rgb)
 {
 
-    ImageRGB * px = dm->data;
+    ImageRGB * px = rgb->data;
 
-    for(int i = 0; i <= dm->size; i++){
+    for(int i = 0; i <= rgb->size; i++){
         printf("[ %d, %d, %d ]", px->r, px->g, px->b);
         
         px++;

@@ -10,16 +10,16 @@ typedef struct {
     int n;
     int width, height;
     int size;
-} Matrix;
+} MatrixRGB;
 
-Matrix * CreateMat(int rows, int columns);
+MatrixRGB * createMatrixRGB(int rows, int columns);
 
-Matrix * LoadFromFile(char *);
+MatrixRGB * loadFile(char *);
 
-void SaveOnFile(Matrix *v, char *name);
+void saveFileRGB(MatrixRGB *v, char *name);
 
-void PrintMat(Matrix * dm);
+void color2gray(MatrixRGB *dm, char *nome);
 
-void PrintRGB(ImageRGB * px);
+void printMatrix(MatrixRGB * dm);
 
 #endif //INC_00_IMAGERGB_H

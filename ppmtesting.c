@@ -11,9 +11,9 @@ int main(int argc, char** argv[])
 	char *filename = argv[1];
 	printf("%s \n", filename);
 	printf("%s \n", "every time a seg fault happens, my life is shorten by a day");
-	Matrix *dm = LoadFromFile(filename);
-    PrintMat(dm);
-	SaveOnFile(dm, "teste_salvar.ppm");
+	MatrixRGB *dm = loadFile(filename);
+    color2gray(dm, "salvar_gs.pgm");
+	saveFileRGB(dm, "salvar_rgb.ppm");
     return 0;
 
 	
