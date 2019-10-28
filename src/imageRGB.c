@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * @brief Function to create and allocate memory to a matrix in wich it will be stored bytes of a color image
+ * 
+ */
 MatrixRGB * createMatrixRGB(int rows, int columns)
 {
     MatrixRGB *rgb;
@@ -19,25 +23,21 @@ MatrixRGB * createMatrixRGB(int rows, int columns)
     return rgb;
 }
 
+/**
+ * @brief Loads color image into matrix
+ */
 MatrixRGB * loadFileRGB(char *name)
 {
-
-    //printf("%s \n", "wow. it got to this point");
     FILE *fp = fopen(name, "rb");
 
-    
     int width, height, max_color;
     char buffer[10];
 
-	fgets(buffer, 10, fp);
-	//printf("%s \n", buffer);
+	fgets(buffer, sizeof(buffer), fp);
 	fscanf(fp, "%d %d", &width, &height);
-	//printf("%d %d \n", width, height);
 	
     fscanf(fp, "%d", &max_color);
-	//printf("%d \n", max_color);
-    fgets(buffer, 10, fp);
-	//printf("%s \n", buffer);
+    fgets(buffer, sizeof(buffer), fp);
 
     MatrixRGB *rgb = createMatrixRGB(width, height);
     fread(rgb->data, 3 * rgb->width, rgb->height, fp);
@@ -45,6 +45,9 @@ MatrixRGB * loadFileRGB(char *name)
     return rgb;
 }
 
+/**
+ * @brief Saves a matrix in ppm format (color image)
+ */
 void saveFileRGB(MatrixRGB *rgb, char *name)
 {
     FILE *fp = fopen(name, "wb");
@@ -52,11 +55,14 @@ void saveFileRGB(MatrixRGB *rgb, char *name)
     fprintf(fp, "P6\n");
     fprintf(fp, "%d %d\n", rgb->width,rgb->height);
     fprintf(fp, "%d\n",255);
-    //fwrite(&(rgb->n), sizeof(int), 1, fp);
 
     fwrite(rgb->data, 3*rgb->width,rgb->height, fp);
 }
 
+
+/**
+ * @brief Makes a color to grayscale conversion
+ */
 void color2gray(MatrixRGB *rgb, char *name)
 {
     ImageRGB * px = rgb->data;
@@ -78,7 +84,6 @@ void color2gray(MatrixRGB *rgb, char *name)
         px2_r->g = px->r;
         px2_g->g = px->g;
         px2_b->g = px->b;
-        //printf("[ %d ]", px2->g);
         
         px++;
         px2++;
@@ -88,21 +93,49 @@ void color2gray(MatrixRGB *rgb, char *name)
     }
     
     saveFileGS(gs, name);
-    saveFileGS(gs_r, "../docs/pgm/salvar_gray_r.pgm");
-    saveFileGS(gs_g, "../docs/pgm/salvar_gray_g.pgm");
-    saveFileGS(gs_b, "../docs/pgm/salvar_gray_b.pgm");
+    saveFileGS(gs_r, "../res/pgm/salvar_gray_red.pgm");
+    saveFileGS(gs_g, "../res/pgm/salvar_gray_green.pgm");
+    saveFileGS(gs_b, "../res/pgm/salvar_gray_blue.pgm");
 }
 
-void printMatrix(MatrixRGB *rgb)
+void intensityRGB(MatrixRGB *rgb, char inten, char *name)
 {
-
     ImageRGB * px = rgb->data;
 
-    for(int i = 0; i < rgb->size; i++){
-        printf("[ %d, %d, %d ]", px->r, px->g, px->b);
-        
-        px++;
-    }
+    MatrixRGB * rgbint = createMatrixRGB(rgb->width, rgb->height);
+    ImageRGB * px2 = rgbint->data;
 
-    printf("\n");
+    for(int i = 0; i < rgbint->size; i++){
+        if(px->r + inten >255){
+            px2->r = 255;
+        }else if (px->r + inten < 0)
+        {
+            px2->r=0;
+        }else{
+            px2->r= px->r + inten;
+        }
+        
+        if(px->g + inten >255){
+            px2->g = 255;
+        }else if (px->g + inten < 0)
+        {
+            px2->g=0;
+        }else{
+            px2->g= px->g + inten;
+        }
+
+        if(px->b + inten >255){
+            px2->b = 255;
+        }else if (px->b + inten < 0)
+        {
+            px2->b=0;
+        }else{
+            px2->b= px->b + inten;
+        }
+
+        px++;
+        px2++;
+    }
+    
+    saveFileRGB(rgbint, name);
 }

@@ -1,3 +1,5 @@
+#ifndef INC_00_IMAGEBIN_H
+#define INC_00_IMAGEBIN_H
 
 typedef struct{
     unsigned char b;
@@ -15,3 +17,5 @@ MatrixBi * createMatrixBi(int rows, int columns);
 MatrixBi * loadFileBi(char *name);
 
 void saveFileBi(MatrixBi *bi, char *name);
+
+#endif //INC_00_IMAGEBIN_H

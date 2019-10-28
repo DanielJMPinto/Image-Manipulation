@@ -1,7 +1,12 @@
 #include "imageBi.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
+/**
+ * @brief Function to create and allocate memory to a matrix in wich it will be stored bits of a binary image
+ * 
+ */
 MatrixBi * createMatrixBi(int rows, int columns)
 {
     MatrixBi *bi;
@@ -13,31 +18,25 @@ MatrixBi * createMatrixBi(int rows, int columns)
 
     bi->size = rows*columns;
     
-    bi->data = (ImageBi *)calloc(bi->size, sizeof(int));
+    bi->data = (ImageBi *)calloc(bi->size, sizeof(char));
 
     return bi;
 }
 
 MatrixBi * loadFileBi(char *name)
 {
-
-    //printf("%s \n", "wow. it got to this point");
     FILE *fp = fopen(name, "rb");
-
     
     int width, height;
     char buffer[10];
 
-	fgets(buffer, 10, fp);
-	//printf("%s \n", buffer);
+	fgets(buffer, sizeof(buffer), fp);
 	fscanf(fp, "%d %d", &width, &height);
-	//printf("%d %d \n", width, height);
 	
-    fgets(buffer, 10, fp);
-	//printf("%s \n", buffer);
+    fgets(buffer, sizeof(buffer), fp);
 
     MatrixBi *bi = createMatrixBi(width, height);
-    fread(bi->data, 3 * bi->width, bi->height, fp);
+    fread(bi->data, bi->width, bi->height, fp);
 
     return bi;
 }
@@ -48,7 +47,6 @@ void saveFileBi(MatrixBi *bi, char *name)
 
     fprintf(fp, "P4\n");
     fprintf(fp, "%d %d\n", bi->width,bi->height);
-    //fwrite(&(bi->n), sizeof(int), 1, fp);
 
-    fwrite(bi->data, 3*bi->width,bi->height, fp);
+    fwrite(bi->data, bi->width,bi->height, fp);
 }

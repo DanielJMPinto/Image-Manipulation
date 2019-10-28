@@ -1,0 +1,52 @@
+\hypertarget{imageRGB_8c}{}\doxysection{src/image\+R\+GB.c File Reference}
+\label{imageRGB_8c}\index{src/imageRGB.c@{src/imageRGB.c}}
+{\ttfamily \#include \char`\"{}image\+R\+G\+B.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}image\+G\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$ \mbox{\hyperlink{imageRGB_8c_a677847957f61c5cfcdc93a06850c18c2}{create\+Matrix\+R\+GB}} (int rows, int columns)
+\item 
+\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$ \mbox{\hyperlink{imageRGB_8c_a84c3dde1302f4992db51fb20b8b9c1fe}{load\+File\+R\+GB}} (char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageRGB_8c_a94c9cc8d3f6d5995fd1fd8d4036a12b8}{save\+File\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageRGB_8c_af38a4578b5b8126dce4fd65e71d49478}{color2gray}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageRGB_8c_a93cf9bedb3ba78fe33ffaa3549704dff}{print\+Matrix}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{imageRGB_8c_af38a4578b5b8126dce4fd65e71d49478}\label{imageRGB_8c_af38a4578b5b8126dce4fd65e71d49478}} 
+\index{imageRGB.c@{imageRGB.c}!color2gray@{color2gray}}
+\index{color2gray@{color2gray}!imageRGB.c@{imageRGB.c}}
+\doxysubsubsection{\texorpdfstring{color2gray()}{color2gray()}}
+{\footnotesize\ttfamily void color2gray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imageRGB_8c_a677847957f61c5cfcdc93a06850c18c2}\label{imageRGB_8c_a677847957f61c5cfcdc93a06850c18c2}} 
+\index{imageRGB.c@{imageRGB.c}!createMatrixRGB@{createMatrixRGB}}
+\index{createMatrixRGB@{createMatrixRGB}!imageRGB.c@{imageRGB.c}}
+\doxysubsubsection{\texorpdfstring{createMatrixRGB()}{createMatrixRGB()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}}$\ast$ create\+Matrix\+R\+GB (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imageRGB_8c_a84c3dde1302f4992db51fb20b8b9c1fe}\label{imageRGB_8c_a84c3dde1302f4992db51fb20b8b9c1fe}} 
+\index{imageRGB.c@{imageRGB.c}!loadFileRGB@{loadFileRGB}}
+\index{loadFileRGB@{loadFileRGB}!imageRGB.c@{imageRGB.c}}
+\doxysubsubsection{\texorpdfstring{loadFileRGB()}{loadFileRGB()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}}$\ast$ load\+File\+R\+GB (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imageRGB_8c_a93cf9bedb3ba78fe33ffaa3549704dff}\label{imageRGB_8c_a93cf9bedb3ba78fe33ffaa3549704dff}} 
+\index{imageRGB.c@{imageRGB.c}!printMatrix@{printMatrix}}
+\index{printMatrix@{printMatrix}!imageRGB.c@{imageRGB.c}}
+\doxysubsubsection{\texorpdfstring{printMatrix()}{printMatrix()}}
+{\footnotesize\ttfamily void print\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imageRGB_8c_a94c9cc8d3f6d5995fd1fd8d4036a12b8}\label{imageRGB_8c_a94c9cc8d3f6d5995fd1fd8d4036a12b8}} 
+\index{imageRGB.c@{imageRGB.c}!saveFileRGB@{saveFileRGB}}
+\index{saveFileRGB@{saveFileRGB}!imageRGB.c@{imageRGB.c}}
+\doxysubsubsection{\texorpdfstring{saveFileRGB()}{saveFileRGB()}}
+{\footnotesize\ttfamily void save\+File\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+

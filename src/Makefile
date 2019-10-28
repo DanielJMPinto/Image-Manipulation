@@ -1,7 +1,7 @@
 all: ppmtesting
 
 ppmtesting: imageRGB.o imageGS.o imageBi.o ppmtesting.o
-	gcc -o ppmtesting ppmtesting.o imageRGB.o imageGS.o imageBi.o
+	gcc -o ppmtesting ppmtesting.o imageRGB.o imageGS.o imageBi.o -lm
 
 ppmtesting.o: ppmtesting.c imageRGB.h imageGS.h imageBi.h
 	gcc -o ppmtesting.o -c ppmtesting.c -W -Wall
