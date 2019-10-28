@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['n_26',['n',['../structMatrixBi.html#a1377f52318cadc49c501ce5858dabc00',1,'MatrixBi::n()'],['../structMatrixGS.html#a9c1133c595dd69b3f09a2ce3c980b4b4',1,'MatrixGS::n()'],['../structMatrixRGB.html#addb68ecd49e4fc273b6dad8e599f7f24',1,'MatrixRGB::n()']]]
+  ['main_25',['main',['../ppmtesting_8c.html#a17c71e8de8c58645dd41431d716ac739',1,'ppmtesting.c']]],
+  ['matrixbi_26',['MatrixBi',['../structMatrixBi.html',1,'']]],
+  ['matrixgs_27',['MatrixGS',['../structMatrixGS.html',1,'']]],
+  ['matrixrgb_28',['MatrixRGB',['../structMatrixRGB.html',1,'']]]
 ];

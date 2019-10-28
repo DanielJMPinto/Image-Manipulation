@@ -12,44 +12,115 @@ struct \mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}}
 \item 
 \mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$ \mbox{\hyperlink{imageRGB_8h_a677847957f61c5cfcdc93a06850c18c2}{create\+Matrix\+R\+GB}} (int rows, int columns)
 \item 
-\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$ \mbox{\hyperlink{imageRGB_8h_a6efed3d1f7ac58791bb93fa897a0d89a}{load\+File\+R\+GB}} (char $\ast$)
+\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$ \mbox{\hyperlink{imageRGB_8h_a84c3dde1302f4992db51fb20b8b9c1fe}{load\+File\+R\+GB}} (char $\ast$name)
 \item 
-void \mbox{\hyperlink{imageRGB_8h_abbcdca44aeb85d22e8d2188893cb9407}{save\+File\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$v, char $\ast$name)
+void \mbox{\hyperlink{imageRGB_8h_a94c9cc8d3f6d5995fd1fd8d4036a12b8}{save\+File\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char $\ast$name)
 \item 
-void \mbox{\hyperlink{imageRGB_8h_a8f57488d922d2808ca16fd6cc8e10fc7}{color2gray}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$dm, char $\ast$nome)
+void \mbox{\hyperlink{imageRGB_8h_ae213851a4633e707a12b50fff50f5146}{color2gray}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char $\ast$nome)
 \item 
-void \mbox{\hyperlink{imageRGB_8h_a74ffe49f0c404a2c95a195ceda25be80}{print\+Matrix}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$dm)
+void \mbox{\hyperlink{imageRGB_8h_abf25f3ad50fa34874ffd202670550bf1}{intensity\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char inten, char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageRGB_8h_a1922b5f5bd5ee183bf26d91401bbde98}{filter\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char $\ast$name)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{imageRGB_8h_a8f57488d922d2808ca16fd6cc8e10fc7}\label{imageRGB_8h_a8f57488d922d2808ca16fd6cc8e10fc7}} 
+\mbox{\Hypertarget{imageRGB_8h_ae213851a4633e707a12b50fff50f5146}\label{imageRGB_8h_ae213851a4633e707a12b50fff50f5146}} 
 \index{imageRGB.h@{imageRGB.h}!color2gray@{color2gray}}
 \index{color2gray@{color2gray}!imageRGB.h@{imageRGB.h}}
 \doxysubsubsection{\texorpdfstring{color2gray()}{color2gray()}}
-{\footnotesize\ttfamily void color2gray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{dm,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void color2gray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
+Converts a ppm format image into a pgm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & Matrix of pixels that will be converted into grayscale \\
+\hline
+{\em nome} & Name of the file in which the new image will be stored \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{imageRGB_8h_a677847957f61c5cfcdc93a06850c18c2}\label{imageRGB_8h_a677847957f61c5cfcdc93a06850c18c2}} 
 \index{imageRGB.h@{imageRGB.h}!createMatrixRGB@{createMatrixRGB}}
 \index{createMatrixRGB@{createMatrixRGB}!imageRGB.h@{imageRGB.h}}
 \doxysubsubsection{\texorpdfstring{createMatrixRGB()}{createMatrixRGB()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}}$\ast$ create\+Matrix\+R\+GB (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{imageRGB_8h_a6efed3d1f7ac58791bb93fa897a0d89a}\label{imageRGB_8h_a6efed3d1f7ac58791bb93fa897a0d89a}} 
+Creates a matrix and allocates memory to store the pixels of a ppm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & The number of rows of pixels of the image \\
+\hline
+{\em columns} & The number of columns of pixels of the image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageRGB_8h_a1922b5f5bd5ee183bf26d91401bbde98}\label{imageRGB_8h_a1922b5f5bd5ee183bf26d91401bbde98}} 
+\index{imageRGB.h@{imageRGB.h}!filterRGB@{filterRGB}}
+\index{filterRGB@{filterRGB}!imageRGB.h@{imageRGB.h}}
+\doxysubsubsection{\texorpdfstring{filterRGB()}{filterRGB()}}
+{\footnotesize\ttfamily void filter\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Applies a filter to a ppm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & Matrix of pixels \\
+\hline
+{\em name} & Name of the file in which the new image will be stored\\
+\hline
+\end{DoxyParams}
+Applies a Mean filter to a ppm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & Matrix of pixels \\
+\hline
+{\em name} & Name of the file in which the new image will be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageRGB_8h_abf25f3ad50fa34874ffd202670550bf1}\label{imageRGB_8h_abf25f3ad50fa34874ffd202670550bf1}} 
+\index{imageRGB.h@{imageRGB.h}!intensityRGB@{intensityRGB}}
+\index{intensityRGB@{intensityRGB}!imageRGB.h@{imageRGB.h}}
+\doxysubsubsection{\texorpdfstring{intensityRGB()}{intensityRGB()}}
+{\footnotesize\ttfamily void intensity\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char}]{inten,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Changes the intensity of a ppm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & Matrix of pixels \\
+\hline
+{\em inten} & Value to be added to each pixel in order to change the intensity of the image \\
+\hline
+{\em name} & Name of the file in which the new image will be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageRGB_8h_a84c3dde1302f4992db51fb20b8b9c1fe}\label{imageRGB_8h_a84c3dde1302f4992db51fb20b8b9c1fe}} 
 \index{imageRGB.h@{imageRGB.h}!loadFileRGB@{loadFileRGB}}
 \index{loadFileRGB@{loadFileRGB}!imageRGB.h@{imageRGB.h}}
 \doxysubsubsection{\texorpdfstring{loadFileRGB()}{loadFileRGB()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}}$\ast$ load\+File\+R\+GB (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}}$\ast$ load\+File\+R\+GB (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{imageRGB_8h_a74ffe49f0c404a2c95a195ceda25be80}\label{imageRGB_8h_a74ffe49f0c404a2c95a195ceda25be80}} 
-\index{imageRGB.h@{imageRGB.h}!printMatrix@{printMatrix}}
-\index{printMatrix@{printMatrix}!imageRGB.h@{imageRGB.h}}
-\doxysubsubsection{\texorpdfstring{printMatrix()}{printMatrix()}}
-{\footnotesize\ttfamily void print\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{dm }\end{DoxyParamCaption})}
+Loads a ppm format image
 
-\mbox{\Hypertarget{imageRGB_8h_abbcdca44aeb85d22e8d2188893cb9407}\label{imageRGB_8h_abbcdca44aeb85d22e8d2188893cb9407}} 
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the image file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageRGB_8h_a94c9cc8d3f6d5995fd1fd8d4036a12b8}\label{imageRGB_8h_a94c9cc8d3f6d5995fd1fd8d4036a12b8}} 
 \index{imageRGB.h@{imageRGB.h}!saveFileRGB@{saveFileRGB}}
 \index{saveFileRGB@{saveFileRGB}!imageRGB.h@{imageRGB.h}}
 \doxysubsubsection{\texorpdfstring{saveFileRGB()}{saveFileRGB()}}
-{\footnotesize\ttfamily void save\+File\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{v,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void save\+File\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
+Saves a file in the ppm format
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & Matrix of pixels to be saved in ppm format \\
+\hline
+{\em name} & Name of the file in which the matrix will be stored \\
+\hline
+\end{DoxyParams}

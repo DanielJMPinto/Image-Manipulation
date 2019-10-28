@@ -6,6 +6,5 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "imageGS.h", "imageGS_8h.html", "imageGS_8h" ],
     [ "imageRGB.c", "imageRGB_8c.html", "imageRGB_8c" ],
     [ "imageRGB.h", "imageRGB_8h.html", "imageRGB_8h" ],
-    [ "main.c", "main_8c.html", "main_8c" ],
     [ "ppmtesting.c", "ppmtesting_8c.html", "ppmtesting_8c" ]
 ];

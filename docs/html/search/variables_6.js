@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size_68',['size',['../structMatrixBi.html#aaa94b8c9f356653b3e05a97dcbfda4d8',1,'MatrixBi::size()'],['../structMatrixGS.html#aa5f4def49b3e400a792d24efc09b402d',1,'MatrixGS::size()'],['../structMatrixRGB.html#a123d633e880483207549efa1ffd20821',1,'MatrixRGB::size()']]]
+  ['width_71',['width',['../structMatrixBi.html#a5728b70920c7558bd7a501e0ae606a28',1,'MatrixBi::width()'],['../structMatrixGS.html#a953e06d75a2e46e45902a7ab06fc27bd',1,'MatrixGS::width()'],['../structMatrixRGB.html#ace2f5ebca83569429df952d851f0fef5',1,'MatrixRGB::width()']]]
 ];

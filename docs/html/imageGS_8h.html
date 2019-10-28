@@ -31,7 +31,6 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Image Processing
    </div>
-   <div id="projectbrief">Image processing using c</div>
   </td>
  </tr>
  </tbody>
@@ -111,44 +110,14 @@ Functions</h2></td></tr>
 <tr class="separator:af4a0237cc2073375e38bdba34a32ac0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01f421942b15af130257aae0cb55993e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageGS_8h.html#a01f421942b15af130257aae0cb55993e">saveFileGS</a> (<a class="el" href="structMatrixGS.html">MatrixGS</a> *gs, char *name)</td></tr>
 <tr class="separator:a01f421942b15af130257aae0cb55993e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36918b7c4fa49fccb757d5ba11914443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageGS_8h.html#a36918b7c4fa49fccb757d5ba11914443">color2bin</a> (<a class="el" href="structMatrixGS.html">MatrixGS</a> *gs, char *tsh, char *name)</td></tr>
-<tr class="separator:a36918b7c4fa49fccb757d5ba11914443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521d79ad9acfa9bdb2ee3664d492bc9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageGS_8h.html#a521d79ad9acfa9bdb2ee3664d492bc9f">gray2bin</a> (<a class="el" href="structMatrixGS.html">MatrixGS</a> *gs, char *tsh, char *name)</td></tr>
+<tr class="separator:a521d79ad9acfa9bdb2ee3664d492bc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a5af2b2559007637f2fe47b6d6c4c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageGS_8h.html#a47a5af2b2559007637f2fe47b6d6c4c8">intensityGS</a> (<a class="el" href="structMatrixGS.html">MatrixGS</a> *gs, char inten, char *name)</td></tr>
+<tr class="separator:a47a5af2b2559007637f2fe47b6d6c4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29a8117245ad2404e02069447f78494"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageGS_8h.html#ab29a8117245ad2404e02069447f78494">filterGS</a> (<a class="el" href="structMatrixGS.html">MatrixGS</a> *gs, char *name)</td></tr>
+<tr class="separator:ab29a8117245ad2404e02069447f78494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a36918b7c4fa49fccb757d5ba11914443"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36918b7c4fa49fccb757d5ba11914443">&#9670;&nbsp;</a></span>color2bin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void color2bin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structMatrixGS.html">MatrixGS</a> *&#160;</td>
-          <td class="paramname"><em>gs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>tsh</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="acbac44f4cacb1e482c2227a0c6659cba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbac44f4cacb1e482c2227a0c6659cba">&#9670;&nbsp;</a></span>createMatrixGS()</h2>
 
@@ -174,6 +143,135 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates a matrix and allocates memory to store the pixels of a pgm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rows</td><td>The number of rows of pixels of the image </td></tr>
+    <tr><td class="paramname">columns</td><td>The number of columns of pixels of the image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab29a8117245ad2404e02069447f78494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29a8117245ad2404e02069447f78494">&#9670;&nbsp;</a></span>filterGS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void filterGS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrixGS.html">MatrixGS</a> *&#160;</td>
+          <td class="paramname"><em>gs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies a filter to a pgm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gs</td><td>Matrix of pixels </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the new image will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a521d79ad9acfa9bdb2ee3664d492bc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521d79ad9acfa9bdb2ee3664d492bc9f">&#9670;&nbsp;</a></span>gray2bin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gray2bin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrixGS.html">MatrixGS</a> *&#160;</td>
+          <td class="paramname"><em>gs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>tsh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Converts a pgm format image into a pbm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gs</td><td>Matrix of pixels that will be converted into pbm format </td></tr>
+    <tr><td class="paramname">nome</td><td>Name of the file in which the new image will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47a5af2b2559007637f2fe47b6d6c4c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47a5af2b2559007637f2fe47b6d6c4c8">&#9670;&nbsp;</a></span>intensityGS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void intensityGS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrixGS.html">MatrixGS</a> *&#160;</td>
+          <td class="paramname"><em>gs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>inten</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Changes the intensity of a pgm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gs</td><td>Matrix of pixels </td></tr>
+    <tr><td class="paramname">inten</td><td>Value to be added to each pixel in order to change the intensity of the image </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the new image will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -192,6 +290,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Loads a pgm format image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the image file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -220,6 +325,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Saves a file in the pgm format</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gs</td><td>Matrix of pixels to be saved in pgm format </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the matrix will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

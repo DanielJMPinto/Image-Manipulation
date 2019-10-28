@@ -1,12 +1,4 @@
 var searchData=
 [
-  ['imagebi_9',['ImageBi',['../structImageBi.html',1,'']]],
-  ['imagebi_2ec_10',['imageBi.c',['../imageBi_8c.html',1,'']]],
-  ['imagebi_2eh_11',['imageBi.h',['../imageBi_8h.html',1,'']]],
-  ['imagegs_12',['ImageGS',['../structImageGS.html',1,'']]],
-  ['imagegs_2ec_13',['imageGS.c',['../imageGS_8c.html',1,'']]],
-  ['imagegs_2eh_14',['imageGS.h',['../imageGS_8h.html',1,'']]],
-  ['imagergb_15',['ImageRGB',['../structImageRGB.html',1,'']]],
-  ['imagergb_2ec_16',['imageRGB.c',['../imageRGB_8c.html',1,'']]],
-  ['imagergb_2eh_17',['imageRGB.h',['../imageRGB_8h.html',1,'']]]
+  ['height_10',['height',['../structMatrixBi.html#ae2e233721d7d84f4c0fa3caf486555b6',1,'MatrixBi::height()'],['../structMatrixGS.html#a45cac864e7edc4e714478b882fc38ab7',1,'MatrixGS::height()'],['../structMatrixRGB.html#a7b661976103a6d0d3a4a959b9c6f6b25',1,'MatrixRGB::height()']]]
 ];

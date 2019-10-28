@@ -31,7 +31,6 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Image Processing
    </div>
-   <div id="projectbrief">Image processing using c</div>
   </td>
  </tr>
  </tbody>
@@ -90,35 +89,39 @@ $(document).ready(function(){initNavTree('imageBi_8h_source.html','');});
 <div class="title">imageBi.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="imageBi_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="structImageBi.html">    2</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="structImageBi.html#aa2a36d5e18949902b531bd8c3d0bba7c">    3</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structImageBi.html#aa2a36d5e18949902b531bd8c3d0bba7c">b</a>;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;}<a class="code" href="structImageBi.html">ImageBi</a>;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="structMatrixBi.html">    6</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structMatrixBi.html#a34317030b1c316a8344e1a40711c84aa">    7</a></span>&#160;    <a class="code" href="structImageBi.html">ImageBi</a> *<a class="code" href="structMatrixBi.html#a34317030b1c316a8344e1a40711c84aa">data</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structMatrixBi.html#a1377f52318cadc49c501ce5858dabc00">    8</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixBi.html#a1377f52318cadc49c501ce5858dabc00">n</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structMatrixBi.html#a5728b70920c7558bd7a501e0ae606a28">    9</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixBi.html#a5728b70920c7558bd7a501e0ae606a28">width</a>, height;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structMatrixBi.html#aaa94b8c9f356653b3e05a97dcbfda4d8">   10</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixBi.html#aaa94b8c9f356653b3e05a97dcbfda4d8">size</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;} <a class="code" href="structMatrixBi.html">MatrixBi</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="structMatrixBi.html">MatrixBi</a> * <a class="code" href="imageBi_8h.html#a31ec2929c429e96d3351c0ebbec0d89a">createMatrixBi</a>(<span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> columns);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="structMatrixBi.html">MatrixBi</a> * <a class="code" href="imageBi_8h.html#ae9c64aadd1f7745a195073ad28243a82">loadFileBi</a>(<span class="keywordtype">char</span> *name);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageBi_8h.html#a005fc88c94dfe539891764f6ffa574e3">saveFileBi</a>(<a class="code" href="structMatrixBi.html">MatrixBi</a> *bi, <span class="keywordtype">char</span> *name);</div>
+<a href="imageBi_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INC_00_IMAGEBIN_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INC_00_IMAGEBIN_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structImageBi.html">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structImageBi.html#aa2a36d5e18949902b531bd8c3d0bba7c">    9</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structImageBi.html#aa2a36d5e18949902b531bd8c3d0bba7c">b</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}<a class="code" href="structImageBi.html">ImageBi</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structMatrixBi.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structMatrixBi.html#a34317030b1c316a8344e1a40711c84aa">   14</a></span>&#160;    <a class="code" href="structImageBi.html">ImageBi</a> *<a class="code" href="structMatrixBi.html#a34317030b1c316a8344e1a40711c84aa">data</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structMatrixBi.html#a5728b70920c7558bd7a501e0ae606a28">   16</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixBi.html#a5728b70920c7558bd7a501e0ae606a28">width</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structMatrixBi.html#ae2e233721d7d84f4c0fa3caf486555b6">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixBi.html#ae2e233721d7d84f4c0fa3caf486555b6">height</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structMatrixBi.html#aaa94b8c9f356653b3e05a97dcbfda4d8">   20</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixBi.html#aaa94b8c9f356653b3e05a97dcbfda4d8">size</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;} <a class="code" href="structMatrixBi.html">MatrixBi</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="structMatrixBi.html">MatrixBi</a> * <a class="code" href="imageBi_8h.html#a31ec2929c429e96d3351c0ebbec0d89a">createMatrixBi</a>(<span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> columns);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="structMatrixBi.html">MatrixBi</a> * <a class="code" href="imageBi_8h.html#ae9c64aadd1f7745a195073ad28243a82">loadFileBi</a>(<span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageBi_8h.html#a005fc88c94dfe539891764f6ffa574e3">saveFileBi</a>(<a class="code" href="structMatrixBi.html">MatrixBi</a> *bi, <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif //INC_00_IMAGEBIN_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructMatrixBi_html_aaa94b8c9f356653b3e05a97dcbfda4d8"><div class="ttname"><a href="structMatrixBi.html#aaa94b8c9f356653b3e05a97dcbfda4d8">MatrixBi::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> imageBi.h:10</div></div>
-<div class="ttc" id="astructMatrixBi_html"><div class="ttname"><a href="structMatrixBi.html">MatrixBi</a></div><div class="ttdef"><b>Definition:</b> imageBi.h:6</div></div>
-<div class="ttc" id="astructMatrixBi_html_a5728b70920c7558bd7a501e0ae606a28"><div class="ttname"><a href="structMatrixBi.html#a5728b70920c7558bd7a501e0ae606a28">MatrixBi::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> imageBi.h:9</div></div>
-<div class="ttc" id="astructMatrixBi_html_a34317030b1c316a8344e1a40711c84aa"><div class="ttname"><a href="structMatrixBi.html#a34317030b1c316a8344e1a40711c84aa">MatrixBi::data</a></div><div class="ttdeci">ImageBi * data</div><div class="ttdef"><b>Definition:</b> imageBi.h:7</div></div>
-<div class="ttc" id="aimageBi_8h_html_ae9c64aadd1f7745a195073ad28243a82"><div class="ttname"><a href="imageBi_8h.html#ae9c64aadd1f7745a195073ad28243a82">loadFileBi</a></div><div class="ttdeci">MatrixBi * loadFileBi(char *name)</div><div class="ttdef"><b>Definition:</b> imageBi.c:22</div></div>
-<div class="ttc" id="astructImageBi_html"><div class="ttname"><a href="structImageBi.html">ImageBi</a></div><div class="ttdef"><b>Definition:</b> imageBi.h:2</div></div>
-<div class="ttc" id="aimageBi_8h_html_a31ec2929c429e96d3351c0ebbec0d89a"><div class="ttname"><a href="imageBi_8h.html#a31ec2929c429e96d3351c0ebbec0d89a">createMatrixBi</a></div><div class="ttdeci">MatrixBi * createMatrixBi(int rows, int columns)</div><div class="ttdef"><b>Definition:</b> imageBi.c:6</div></div>
-<div class="ttc" id="aimageBi_8h_html_a005fc88c94dfe539891764f6ffa574e3"><div class="ttname"><a href="imageBi_8h.html#a005fc88c94dfe539891764f6ffa574e3">saveFileBi</a></div><div class="ttdeci">void saveFileBi(MatrixBi *bi, char *name)</div><div class="ttdef"><b>Definition:</b> imageBi.c:46</div></div>
-<div class="ttc" id="astructImageBi_html_aa2a36d5e18949902b531bd8c3d0bba7c"><div class="ttname"><a href="structImageBi.html#aa2a36d5e18949902b531bd8c3d0bba7c">ImageBi::b</a></div><div class="ttdeci">unsigned char b</div><div class="ttdef"><b>Definition:</b> imageBi.h:3</div></div>
-<div class="ttc" id="astructMatrixBi_html_a1377f52318cadc49c501ce5858dabc00"><div class="ttname"><a href="structMatrixBi.html#a1377f52318cadc49c501ce5858dabc00">MatrixBi::n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> imageBi.h:8</div></div>
+<div class="ttc" id="astructMatrixBi_html_aaa94b8c9f356653b3e05a97dcbfda4d8"><div class="ttname"><a href="structMatrixBi.html#aaa94b8c9f356653b3e05a97dcbfda4d8">MatrixBi::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> imageBi.h:20</div></div>
+<div class="ttc" id="astructMatrixBi_html"><div class="ttname"><a href="structMatrixBi.html">MatrixBi</a></div><div class="ttdef"><b>Definition:</b> imageBi.h:12</div></div>
+<div class="ttc" id="astructMatrixBi_html_a5728b70920c7558bd7a501e0ae606a28"><div class="ttname"><a href="structMatrixBi.html#a5728b70920c7558bd7a501e0ae606a28">MatrixBi::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> imageBi.h:16</div></div>
+<div class="ttc" id="astructMatrixBi_html_a34317030b1c316a8344e1a40711c84aa"><div class="ttname"><a href="structMatrixBi.html#a34317030b1c316a8344e1a40711c84aa">MatrixBi::data</a></div><div class="ttdeci">ImageBi * data</div><div class="ttdef"><b>Definition:</b> imageBi.h:14</div></div>
+<div class="ttc" id="aimageBi_8h_html_ae9c64aadd1f7745a195073ad28243a82"><div class="ttname"><a href="imageBi_8h.html#ae9c64aadd1f7745a195073ad28243a82">loadFileBi</a></div><div class="ttdeci">MatrixBi * loadFileBi(char *name)</div><div class="ttdef"><b>Definition:</b> imageBi.c:32</div></div>
+<div class="ttc" id="astructImageBi_html"><div class="ttname"><a href="structImageBi.html">ImageBi</a></div><div class="ttdef"><b>Definition:</b> imageBi.h:7</div></div>
+<div class="ttc" id="aimageBi_8h_html_a31ec2929c429e96d3351c0ebbec0d89a"><div class="ttname"><a href="imageBi_8h.html#a31ec2929c429e96d3351c0ebbec0d89a">createMatrixBi</a></div><div class="ttdeci">MatrixBi * createMatrixBi(int rows, int columns)</div><div class="ttdef"><b>Definition:</b> imageBi.c:12</div></div>
+<div class="ttc" id="astructMatrixBi_html_ae2e233721d7d84f4c0fa3caf486555b6"><div class="ttname"><a href="structMatrixBi.html#ae2e233721d7d84f4c0fa3caf486555b6">MatrixBi::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> imageBi.h:18</div></div>
+<div class="ttc" id="aimageBi_8h_html_a005fc88c94dfe539891764f6ffa574e3"><div class="ttname"><a href="imageBi_8h.html#a005fc88c94dfe539891764f6ffa574e3">saveFileBi</a></div><div class="ttdeci">void saveFileBi(MatrixBi *bi, char *name)</div><div class="ttdef"><b>Definition:</b> imageBi.c:56</div></div>
+<div class="ttc" id="astructImageBi_html_aa2a36d5e18949902b531bd8c3d0bba7c"><div class="ttname"><a href="structImageBi.html#aa2a36d5e18949902b531bd8c3d0bba7c">ImageBi::b</a></div><div class="ttdeci">unsigned char b</div><div class="ttdef"><b>Definition:</b> imageBi.h:9</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

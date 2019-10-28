@@ -22,15 +22,40 @@ void \mbox{\hyperlink{imageBi_8c_a005fc88c94dfe539891764f6ffa574e3}{save\+File\+
 \doxysubsubsection{\texorpdfstring{createMatrixBi()}{createMatrixBi()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structMatrixBi}{Matrix\+Bi}}$\ast$ create\+Matrix\+Bi (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 
+Creates a matrix and allocates memory to store the bits of a pbm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & The number of rows of the image \\
+\hline
+{\em columns} & The number of columns of the image \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{imageBi_8c_ae9c64aadd1f7745a195073ad28243a82}\label{imageBi_8c_ae9c64aadd1f7745a195073ad28243a82}} 
 \index{imageBi.c@{imageBi.c}!loadFileBi@{loadFileBi}}
 \index{loadFileBi@{loadFileBi}!imageBi.c@{imageBi.c}}
 \doxysubsubsection{\texorpdfstring{loadFileBi()}{loadFileBi()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structMatrixBi}{Matrix\+Bi}}$\ast$ load\+File\+Bi (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
+Loads a pbm format image
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the image file \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{imageBi_8c_a005fc88c94dfe539891764f6ffa574e3}\label{imageBi_8c_a005fc88c94dfe539891764f6ffa574e3}} 
 \index{imageBi.c@{imageBi.c}!saveFileBi@{saveFileBi}}
 \index{saveFileBi@{saveFileBi}!imageBi.c@{imageBi.c}}
 \doxysubsubsection{\texorpdfstring{saveFileBi()}{saveFileBi()}}
 {\footnotesize\ttfamily void save\+File\+Bi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixBi}{Matrix\+Bi}} $\ast$}]{bi,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
+Saves a file in the pbm format
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & Matrix of bits to be saved in pbm format \\
+\hline
+{\em name} & Name of the file in which the matrix will be stored \\
+\hline
+\end{DoxyParams}

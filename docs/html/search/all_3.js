@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['g_7',['g',['../structImageGS.html#a406483f4651ec90a45fcf67c066f9642',1,'ImageGS::g()'],['../structImageRGB.html#aef67e8f6db45992782073c35c4bd09ff',1,'ImageRGB::g()']]]
+  ['filtergs_6',['filterGS',['../imageGS_8c.html#ab29a8117245ad2404e02069447f78494',1,'filterGS(MatrixGS *gs, char *name):&#160;imageGS.c'],['../imageGS_8h.html#ab29a8117245ad2404e02069447f78494',1,'filterGS(MatrixGS *gs, char *name):&#160;imageGS.c']]],
+  ['filterrgb_7',['filterRGB',['../imageRGB_8c.html#a1922b5f5bd5ee183bf26d91401bbde98',1,'filterRGB(MatrixRGB *rgb, char *name):&#160;imageRGB.c'],['../imageRGB_8h.html#a1922b5f5bd5ee183bf26d91401bbde98',1,'filterRGB(MatrixRGB *rgb, char *name):&#160;imageRGB.c']]]
 ];

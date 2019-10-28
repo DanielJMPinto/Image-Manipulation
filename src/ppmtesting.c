@@ -3,6 +3,21 @@
 #include "imageGS.h"
 #include "imageBi.h"
 
+/** \mainpage <h1>Image Processing</h1>
+ * 
+ * This is a simple image manipulation project.
+ * 
+ * The main purpose of this project is to manipulate images in the pnm format.
+ * 
+ * Users can:<ul>
+ * <li>Convert one format of image into another</li>
+ * <li>Apply filters</li>
+ * <li>Increse/Decrease intensity of an image</li>
+ * </ul>
+ * 
+ * \authors Rodrigo Oliveira, Daniel Pinto
+ */
+
 /**
  * @brief Main program 
  */

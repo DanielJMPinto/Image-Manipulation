@@ -4,15 +4,16 @@
 #include <math.h>
 
 /**
- * @brief Function to create and allocate memory to a matrix in wich it will be stored bits of a binary image
+ * Creates a matrix and allocates memory to store the bits of a pbm image
  * 
- */
+ * @param rows The number of rows of the image
+ * @param columns The number of columns of the image
+*/
 MatrixBi * createMatrixBi(int rows, int columns)
 {
     MatrixBi *bi;
 
     bi = (MatrixBi*)malloc(sizeof(MatrixBi));
-    bi->n = 0;
     bi->width=rows;
     bi->height=columns;
 
@@ -23,6 +24,11 @@ MatrixBi * createMatrixBi(int rows, int columns)
     return bi;
 }
 
+/**
+ * Loads a pbm format image
+ * 
+ * @param name Name of the image file
+ */
 MatrixBi * loadFileBi(char *name)
 {
     FILE *fp = fopen(name, "rb");
@@ -41,6 +47,12 @@ MatrixBi * loadFileBi(char *name)
     return bi;
 }
 
+/**
+ * Saves a file in the pbm format
+ * 
+ * @param bi Matrix of bits to be saved in pbm format
+ * @param name Name of the file in which the matrix will be stored
+ */
 void saveFileBi(MatrixBi *bi, char *name)
 {
     FILE *fp = fopen(name, "wb");

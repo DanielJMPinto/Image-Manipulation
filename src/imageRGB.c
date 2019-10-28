@@ -4,15 +4,16 @@
 #include <stdio.h>
 
 /**
- * @brief Function to create and allocate memory to a matrix in wich it will be stored bytes of a color image
+ * Creates a matrix and allocates memory to store the pixels of a ppm image
  * 
- */
+ * @param rows The number of rows of pixels of the image
+ * @param columns The number of columns of pixels of the image
+*/
 MatrixRGB * createMatrixRGB(int rows, int columns)
 {
     MatrixRGB *rgb;
 
     rgb = (MatrixRGB*)malloc(sizeof(MatrixRGB));
-    rgb->n = 0;
     rgb->width=rows;
     rgb->height=columns;
 
@@ -24,7 +25,9 @@ MatrixRGB * createMatrixRGB(int rows, int columns)
 }
 
 /**
- * @brief Loads color image into matrix
+ * Loads a ppm format image
+ * 
+ * @param name Name of the image file
  */
 MatrixRGB * loadFileRGB(char *name)
 {
@@ -46,7 +49,10 @@ MatrixRGB * loadFileRGB(char *name)
 }
 
 /**
- * @brief Saves a matrix in ppm format (color image)
+ * Saves a file in the ppm format
+ * 
+ * @param rgb Matrix of pixels to be saved in ppm format
+ * @param name Name of the file in which the matrix will be stored
  */
 void saveFileRGB(MatrixRGB *rgb, char *name)
 {
@@ -61,7 +67,10 @@ void saveFileRGB(MatrixRGB *rgb, char *name)
 
 
 /**
- * @brief Makes a color to grayscale conversion
+ * Converts a ppm format image into a pgm image
+ * 
+ * @param rgb Matrix of pixels that will be converted into grayscale
+ * @param nome Name of the file in which the new image will be stored
  */
 void color2gray(MatrixRGB *rgb, char *name)
 {
@@ -98,6 +107,13 @@ void color2gray(MatrixRGB *rgb, char *name)
     saveFileGS(gs_b, "../res/pgm/salvar_gray_blue.pgm");
 }
 
+/**
+ * Changes the intensity of a ppm image
+ * 
+ * @param rgb Matrix of pixels
+ * @param inten Value to be added to each pixel in order to change the intensity of the image
+ * @param name Name of the file in which the new image will be stored
+ */
 void intensityRGB(MatrixRGB *rgb, char inten, char *name)
 {
     ImageRGB * px = rgb->data;
@@ -140,6 +156,12 @@ void intensityRGB(MatrixRGB *rgb, char inten, char *name)
     saveFileRGB(rgbint, name);
 }
 
+/**
+ * Applies a Mean filter to a ppm image
+ * 
+ * @param rgb Matrix of pixels
+ * @param name Name of the file in which the new image will be stored
+ */
 void filterRGB(MatrixRGB *rgb, char *name)
 {
     ImageRGB * px = rgb->data;

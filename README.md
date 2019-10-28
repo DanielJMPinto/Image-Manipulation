@@ -1,6 +1,16 @@
-# Projeto2-cslp
+# Image Processing
 
-Reference links for the image formats
+Image manipulation project using c language.
+Its main purpose is to manipulate images in the pnm format.
+
+# Usage
+```
+$ cd src
+$ make
+$ ./ppmtesting *IMAGE_FILE*
+```
+
+# Reference links for the image formats:
 
 http://netpbm.sourceforge.net/doc/pnm.html
 

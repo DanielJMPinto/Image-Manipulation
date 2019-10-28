@@ -1,6 +1,14 @@
 var searchData=
 [
-  ['loadfilebi_18',['loadFileBi',['../imageBi_8c.html#ae9c64aadd1f7745a195073ad28243a82',1,'loadFileBi(char *name):&#160;imageBi.c'],['../imageBi_8h.html#ae9c64aadd1f7745a195073ad28243a82',1,'loadFileBi(char *name):&#160;imageBi.c']]],
-  ['loadfilegs_19',['loadFileGS',['../imageGS_8c.html#af4a0237cc2073375e38bdba34a32ac0c',1,'loadFileGS(char *name):&#160;imageGS.c'],['../imageGS_8h.html#af4a0237cc2073375e38bdba34a32ac0c',1,'loadFileGS(char *name):&#160;imageGS.c']]],
-  ['loadfilergb_20',['loadFileRGB',['../imageRGB_8c.html#a84c3dde1302f4992db51fb20b8b9c1fe',1,'loadFileRGB(char *name):&#160;imageRGB.c'],['../imageRGB_8h.html#a6efed3d1f7ac58791bb93fa897a0d89a',1,'loadFileRGB(char *):&#160;imageRGB.c']]]
+  ['imagebi_11',['ImageBi',['../structImageBi.html',1,'']]],
+  ['imagebi_2ec_12',['imageBi.c',['../imageBi_8c.html',1,'']]],
+  ['imagebi_2eh_13',['imageBi.h',['../imageBi_8h.html',1,'']]],
+  ['imagegs_14',['ImageGS',['../structImageGS.html',1,'']]],
+  ['imagegs_2ec_15',['imageGS.c',['../imageGS_8c.html',1,'']]],
+  ['imagegs_2eh_16',['imageGS.h',['../imageGS_8h.html',1,'']]],
+  ['imagergb_17',['ImageRGB',['../structImageRGB.html',1,'']]],
+  ['imagergb_2ec_18',['imageRGB.c',['../imageRGB_8c.html',1,'']]],
+  ['imagergb_2eh_19',['imageRGB.h',['../imageRGB_8h.html',1,'']]],
+  ['intensitygs_20',['intensityGS',['../imageGS_8c.html#a47a5af2b2559007637f2fe47b6d6c4c8',1,'intensityGS(MatrixGS *gs, char inten, char *name):&#160;imageGS.c'],['../imageGS_8h.html#a47a5af2b2559007637f2fe47b6d6c4c8',1,'intensityGS(MatrixGS *gs, char inten, char *name):&#160;imageGS.c']]],
+  ['intensityrgb_21',['intensityRGB',['../imageRGB_8c.html#abf25f3ad50fa34874ffd202670550bf1',1,'intensityRGB(MatrixRGB *rgb, char inten, char *name):&#160;imageRGB.c'],['../imageRGB_8h.html#abf25f3ad50fa34874ffd202670550bf1',1,'intensityRGB(MatrixRGB *rgb, char inten, char *name):&#160;imageRGB.c']]]
 ];

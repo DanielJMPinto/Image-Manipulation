@@ -5,15 +5,16 @@
 
 
 /**
- * @brief Function to create and allocate memory to a matrix in wich it will be stored bytes of a grayscale image
+ * Creates a matrix and allocates memory to store the pixels of a pgm image
  * 
- */
+ * @param rows The number of rows of pixels of the image
+ * @param columns The number of columns of pixels of the image
+*/
 MatrixGS * createMatrixGS(int rows, int columns)
 {
     MatrixGS *gs;
 
     gs = (MatrixGS*)malloc(sizeof(MatrixGS));
-    gs->n = 0;
     gs->width=rows;
     gs->height=columns;
 
@@ -24,6 +25,11 @@ MatrixGS * createMatrixGS(int rows, int columns)
     return gs;
 }
 
+/**
+ * Loads a pgm format image
+ * 
+ * @param name Name of the image file
+ */
 MatrixGS * loadFileGS(char *name)
 {
     FILE *fp = fopen(name, "rb");
@@ -43,6 +49,12 @@ MatrixGS * loadFileGS(char *name)
     return gs;
 }
 
+/**
+ * Saves a file in the pgm format
+ * 
+ * @param gs Matrix of pixels to be saved in pgm format
+ * @param name Name of the file in which the matrix will be stored
+ */
 void saveFileGS(MatrixGS *gs, char *name)
 {
     FILE *fp = fopen(name, "wb");
@@ -54,6 +66,12 @@ void saveFileGS(MatrixGS *gs, char *name)
     fwrite(gs->data, gs->width,gs->height, fp);
 }
 
+/**
+ * Converts a pgm format image into a pbm image
+ * 
+ * @param gs Matrix of pixels that will be converted into pbm format
+ * @param nome Name of the file in which the new image will be stored
+ */
 void gray2bin(MatrixGS * gs, char * tsh, char * name)
 {
     ImageGS * px = gs->data;
@@ -91,6 +109,13 @@ void gray2bin(MatrixGS * gs, char * tsh, char * name)
     saveFileGS(bi, name);
 }
 
+/**
+ * Changes the intensity of a pgm image
+ * 
+ * @param gs Matrix of pixels
+ * @param inten Value to be added to each pixel in order to change the intensity of the image
+ * @param name Name of the file in which the new image will be stored
+ */
 void intensityGS(MatrixGS *gs, char inten, char *name)
 {
     ImageGS * px = gs->data;
@@ -115,6 +140,12 @@ void intensityGS(MatrixGS *gs, char inten, char *name)
     saveFileGS(gsint, name);
 }
 
+/**
+ * Applies a filter to a pgm image
+ * 
+ * @param gs Matrix of pixels
+ * @param name Name of the file in which the new image will be stored
+ */
 void filterGS(MatrixGS *gs, char *name)
 {
     ImageGS * px = gs->data;

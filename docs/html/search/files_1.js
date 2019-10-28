@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2ec_47',['main.c',['../main_8c.html',1,'']]]
+  ['ppmtesting_2ec_48',['ppmtesting.c',['../ppmtesting_8c.html',1,'']]]
 ];

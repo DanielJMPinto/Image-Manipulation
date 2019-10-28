@@ -31,7 +31,6 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Image Processing
    </div>
-   <div id="projectbrief">Image processing using c</div>
   </td>
  </tr>
  </tbody>
@@ -107,8 +106,10 @@ Functions</h2></td></tr>
 <tr class="separator:a94c9cc8d3f6d5995fd1fd8d4036a12b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38a4578b5b8126dce4fd65e71d49478"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageRGB_8c.html#af38a4578b5b8126dce4fd65e71d49478">color2gray</a> (<a class="el" href="structMatrixRGB.html">MatrixRGB</a> *rgb, char *name)</td></tr>
 <tr class="separator:af38a4578b5b8126dce4fd65e71d49478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93cf9bedb3ba78fe33ffaa3549704dff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageRGB_8c.html#a93cf9bedb3ba78fe33ffaa3549704dff">printMatrix</a> (<a class="el" href="structMatrixRGB.html">MatrixRGB</a> *rgb)</td></tr>
-<tr class="separator:a93cf9bedb3ba78fe33ffaa3549704dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf25f3ad50fa34874ffd202670550bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageRGB_8c.html#abf25f3ad50fa34874ffd202670550bf1">intensityRGB</a> (<a class="el" href="structMatrixRGB.html">MatrixRGB</a> *rgb, char inten, char *name)</td></tr>
+<tr class="separator:abf25f3ad50fa34874ffd202670550bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1922b5f5bd5ee183bf26d91401bbde98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageRGB_8c.html#a1922b5f5bd5ee183bf26d91401bbde98">filterRGB</a> (<a class="el" href="structMatrixRGB.html">MatrixRGB</a> *rgb, char *name)</td></tr>
+<tr class="separator:a1922b5f5bd5ee183bf26d91401bbde98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="af38a4578b5b8126dce4fd65e71d49478"></a>
@@ -136,6 +137,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Converts a ppm format image into a pgm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td>Matrix of pixels that will be converted into grayscale </td></tr>
+    <tr><td class="paramname">nome</td><td>Name of the file in which the new image will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -164,6 +173,93 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates a matrix and allocates memory to store the pixels of a ppm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rows</td><td>The number of rows of pixels of the image </td></tr>
+    <tr><td class="paramname">columns</td><td>The number of columns of pixels of the image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1922b5f5bd5ee183bf26d91401bbde98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1922b5f5bd5ee183bf26d91401bbde98">&#9670;&nbsp;</a></span>filterRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void filterRGB </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrixRGB.html">MatrixRGB</a> *&#160;</td>
+          <td class="paramname"><em>rgb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies a Mean filter to a ppm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td>Matrix of pixels </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the new image will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf25f3ad50fa34874ffd202670550bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf25f3ad50fa34874ffd202670550bf1">&#9670;&nbsp;</a></span>intensityRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void intensityRGB </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrixRGB.html">MatrixRGB</a> *&#160;</td>
+          <td class="paramname"><em>rgb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>inten</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Changes the intensity of a ppm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td>Matrix of pixels </td></tr>
+    <tr><td class="paramname">inten</td><td>Value to be added to each pixel in order to change the intensity of the image </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the new image will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -182,24 +278,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a93cf9bedb3ba78fe33ffaa3549704dff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93cf9bedb3ba78fe33ffaa3549704dff">&#9670;&nbsp;</a></span>printMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void printMatrix </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structMatrixRGB.html">MatrixRGB</a> *&#160;</td>
-          <td class="paramname"><em>rgb</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Loads a ppm format image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the image file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -228,6 +313,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Saves a file in the ppm format</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td>Matrix of pixels to be saved in ppm format </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the matrix will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

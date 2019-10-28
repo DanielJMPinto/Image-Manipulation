@@ -13,32 +13,102 @@
 \item 
 void \mbox{\hyperlink{imageGS_8c_a01f421942b15af130257aae0cb55993e}{save\+File\+GS}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char $\ast$name)
 \item 
-void \mbox{\hyperlink{imageGS_8c_a36918b7c4fa49fccb757d5ba11914443}{color2bin}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char $\ast$tsh, char $\ast$name)
+void \mbox{\hyperlink{imageGS_8c_a521d79ad9acfa9bdb2ee3664d492bc9f}{gray2bin}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char $\ast$tsh, char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageGS_8c_a47a5af2b2559007637f2fe47b6d6c4c8}{intensity\+GS}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char inten, char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageGS_8c_ab29a8117245ad2404e02069447f78494}{filter\+GS}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char $\ast$name)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{imageGS_8c_a36918b7c4fa49fccb757d5ba11914443}\label{imageGS_8c_a36918b7c4fa49fccb757d5ba11914443}} 
-\index{imageGS.c@{imageGS.c}!color2bin@{color2bin}}
-\index{color2bin@{color2bin}!imageGS.c@{imageGS.c}}
-\doxysubsubsection{\texorpdfstring{color2bin()}{color2bin()}}
-{\footnotesize\ttfamily void color2bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$}]{gs,  }\item[{char $\ast$}]{tsh,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{imageGS_8c_acbac44f4cacb1e482c2227a0c6659cba}\label{imageGS_8c_acbac44f4cacb1e482c2227a0c6659cba}} 
 \index{imageGS.c@{imageGS.c}!createMatrixGS@{createMatrixGS}}
 \index{createMatrixGS@{createMatrixGS}!imageGS.c@{imageGS.c}}
 \doxysubsubsection{\texorpdfstring{createMatrixGS()}{createMatrixGS()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structMatrixGS}{Matrix\+GS}}$\ast$ create\+Matrix\+GS (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 
+Creates a matrix and allocates memory to store the pixels of a pgm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & The number of rows of pixels of the image \\
+\hline
+{\em columns} & The number of columns of pixels of the image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageGS_8c_ab29a8117245ad2404e02069447f78494}\label{imageGS_8c_ab29a8117245ad2404e02069447f78494}} 
+\index{imageGS.c@{imageGS.c}!filterGS@{filterGS}}
+\index{filterGS@{filterGS}!imageGS.c@{imageGS.c}}
+\doxysubsubsection{\texorpdfstring{filterGS()}{filterGS()}}
+{\footnotesize\ttfamily void filter\+GS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$}]{gs,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Applies a filter to a pgm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em gs} & Matrix of pixels \\
+\hline
+{\em name} & Name of the file in which the new image will be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageGS_8c_a521d79ad9acfa9bdb2ee3664d492bc9f}\label{imageGS_8c_a521d79ad9acfa9bdb2ee3664d492bc9f}} 
+\index{imageGS.c@{imageGS.c}!gray2bin@{gray2bin}}
+\index{gray2bin@{gray2bin}!imageGS.c@{imageGS.c}}
+\doxysubsubsection{\texorpdfstring{gray2bin()}{gray2bin()}}
+{\footnotesize\ttfamily void gray2bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$}]{gs,  }\item[{char $\ast$}]{tsh,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Converts a pgm format image into a pbm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em gs} & Matrix of pixels that will be converted into pbm format \\
+\hline
+{\em nome} & Name of the file in which the new image will be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageGS_8c_a47a5af2b2559007637f2fe47b6d6c4c8}\label{imageGS_8c_a47a5af2b2559007637f2fe47b6d6c4c8}} 
+\index{imageGS.c@{imageGS.c}!intensityGS@{intensityGS}}
+\index{intensityGS@{intensityGS}!imageGS.c@{imageGS.c}}
+\doxysubsubsection{\texorpdfstring{intensityGS()}{intensityGS()}}
+{\footnotesize\ttfamily void intensity\+GS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$}]{gs,  }\item[{char}]{inten,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Changes the intensity of a pgm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em gs} & Matrix of pixels \\
+\hline
+{\em inten} & Value to be added to each pixel in order to change the intensity of the image \\
+\hline
+{\em name} & Name of the file in which the new image will be stored \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{imageGS_8c_af4a0237cc2073375e38bdba34a32ac0c}\label{imageGS_8c_af4a0237cc2073375e38bdba34a32ac0c}} 
 \index{imageGS.c@{imageGS.c}!loadFileGS@{loadFileGS}}
 \index{loadFileGS@{loadFileGS}!imageGS.c@{imageGS.c}}
 \doxysubsubsection{\texorpdfstring{loadFileGS()}{loadFileGS()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structMatrixGS}{Matrix\+GS}}$\ast$ load\+File\+GS (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
+Loads a pgm format image
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the image file \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{imageGS_8c_a01f421942b15af130257aae0cb55993e}\label{imageGS_8c_a01f421942b15af130257aae0cb55993e}} 
 \index{imageGS.c@{imageGS.c}!saveFileGS@{saveFileGS}}
 \index{saveFileGS@{saveFileGS}!imageGS.c@{imageGS.c}}
 \doxysubsubsection{\texorpdfstring{saveFileGS()}{saveFileGS()}}
 {\footnotesize\ttfamily void save\+File\+GS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$}]{gs,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
+Saves a file in the pgm format
+
+
+\begin{DoxyParams}{Parameters}
+{\em gs} & Matrix of pixels to be saved in pgm format \\
+\hline
+{\em name} & Name of the file in which the matrix will be stored \\
+\hline
+\end{DoxyParams}

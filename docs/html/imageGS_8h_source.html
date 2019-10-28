@@ -31,7 +31,6 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Image Processing
    </div>
-   <div id="projectbrief">Image processing using c</div>
   </td>
  </tr>
  </tbody>
@@ -90,38 +89,48 @@ $(document).ready(function(){initNavTree('imageGS_8h_source.html','');});
 <div class="title">imageGS.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="imageGS_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="structImageGS.html">    2</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="structImageGS.html#a406483f4651ec90a45fcf67c066f9642">    3</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structImageGS.html#a406483f4651ec90a45fcf67c066f9642">g</a>;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;}<a class="code" href="structImageGS.html">ImageGS</a>;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="structMatrixGS.html">    6</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structMatrixGS.html#a1fbc24acc01b532ee8f186a823a2e5e5">    7</a></span>&#160;    <a class="code" href="structImageGS.html">ImageGS</a> *<a class="code" href="structMatrixGS.html#a1fbc24acc01b532ee8f186a823a2e5e5">data</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structMatrixGS.html#a9c1133c595dd69b3f09a2ce3c980b4b4">    8</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixGS.html#a9c1133c595dd69b3f09a2ce3c980b4b4">n</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structMatrixGS.html#a953e06d75a2e46e45902a7ab06fc27bd">    9</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixGS.html#a953e06d75a2e46e45902a7ab06fc27bd">width</a>, height;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structMatrixGS.html#aa5f4def49b3e400a792d24efc09b402d">   10</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixGS.html#aa5f4def49b3e400a792d24efc09b402d">size</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;} <a class="code" href="structMatrixGS.html">MatrixGS</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="structMatrixGS.html">MatrixGS</a> * <a class="code" href="imageGS_8h.html#acbac44f4cacb1e482c2227a0c6659cba">createMatrixGS</a>(<span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> columns);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="structMatrixGS.html">MatrixGS</a> * <a class="code" href="imageGS_8h.html#af4a0237cc2073375e38bdba34a32ac0c">loadFileGS</a>(<span class="keywordtype">char</span> *name);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageGS_8h.html#a01f421942b15af130257aae0cb55993e">saveFileGS</a>(<a class="code" href="structMatrixGS.html">MatrixGS</a> *gs, <span class="keywordtype">char</span> *name);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageGS_8h.html#a36918b7c4fa49fccb757d5ba11914443">color2bin</a>(<a class="code" href="structMatrixGS.html">MatrixGS</a> * gs, <span class="keywordtype">char</span> * tsh, <span class="keywordtype">char</span> * name);</div>
+<a href="imageGS_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INC_00_IMAGEGS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INC_00_IMAGEGS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structImageGS.html">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structImageGS.html#a406483f4651ec90a45fcf67c066f9642">    9</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structImageGS.html#a406483f4651ec90a45fcf67c066f9642">g</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}<a class="code" href="structImageGS.html">ImageGS</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structMatrixGS.html">   15</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structMatrixGS.html#a1fbc24acc01b532ee8f186a823a2e5e5">   17</a></span>&#160;    <a class="code" href="structImageGS.html">ImageGS</a> *<a class="code" href="structMatrixGS.html#a1fbc24acc01b532ee8f186a823a2e5e5">data</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structMatrixGS.html#a953e06d75a2e46e45902a7ab06fc27bd">   19</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixGS.html#a953e06d75a2e46e45902a7ab06fc27bd">width</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structMatrixGS.html#a45cac864e7edc4e714478b882fc38ab7">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixGS.html#a45cac864e7edc4e714478b882fc38ab7">height</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structMatrixGS.html#aa5f4def49b3e400a792d24efc09b402d">   23</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structMatrixGS.html#aa5f4def49b3e400a792d24efc09b402d">size</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <a class="code" href="structMatrixGS.html">MatrixGS</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="structMatrixGS.html">MatrixGS</a> * <a class="code" href="imageGS_8h.html#acbac44f4cacb1e482c2227a0c6659cba">createMatrixGS</a>(<span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> columns);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="structMatrixGS.html">MatrixGS</a> * <a class="code" href="imageGS_8h.html#af4a0237cc2073375e38bdba34a32ac0c">loadFileGS</a>(<span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageGS_8h.html#a01f421942b15af130257aae0cb55993e">saveFileGS</a>(<a class="code" href="structMatrixGS.html">MatrixGS</a> *gs, <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageGS_8h.html#a521d79ad9acfa9bdb2ee3664d492bc9f">gray2bin</a>(<a class="code" href="structMatrixGS.html">MatrixGS</a> * gs, <span class="keywordtype">char</span> * tsh, <span class="keywordtype">char</span> * name);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageGS_8h.html#a47a5af2b2559007637f2fe47b6d6c4c8">intensityGS</a>(<a class="code" href="structMatrixGS.html">MatrixGS</a> *gs, <span class="keywordtype">char</span> inten, <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> <a class="code" href="imageGS_8h.html#ab29a8117245ad2404e02069447f78494">filterGS</a>(<a class="code" href="structMatrixGS.html">MatrixGS</a> *gs, <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif //INC_00_IMAGEGS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructImageGS_html_a406483f4651ec90a45fcf67c066f9642"><div class="ttname"><a href="structImageGS.html#a406483f4651ec90a45fcf67c066f9642">ImageGS::g</a></div><div class="ttdeci">unsigned char g</div><div class="ttdef"><b>Definition:</b> imageGS.h:3</div></div>
-<div class="ttc" id="aimageGS_8h_html_acbac44f4cacb1e482c2227a0c6659cba"><div class="ttname"><a href="imageGS_8h.html#acbac44f4cacb1e482c2227a0c6659cba">createMatrixGS</a></div><div class="ttdeci">MatrixGS * createMatrixGS(int rows, int columns)</div><div class="ttdef"><b>Definition:</b> imageGS.c:6</div></div>
-<div class="ttc" id="astructMatrixGS_html_a1fbc24acc01b532ee8f186a823a2e5e5"><div class="ttname"><a href="structMatrixGS.html#a1fbc24acc01b532ee8f186a823a2e5e5">MatrixGS::data</a></div><div class="ttdeci">ImageGS * data</div><div class="ttdef"><b>Definition:</b> imageGS.h:7</div></div>
-<div class="ttc" id="aimageGS_8h_html_a01f421942b15af130257aae0cb55993e"><div class="ttname"><a href="imageGS_8h.html#a01f421942b15af130257aae0cb55993e">saveFileGS</a></div><div class="ttdeci">void saveFileGS(MatrixGS *gs, char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:48</div></div>
-<div class="ttc" id="astructImageGS_html"><div class="ttname"><a href="structImageGS.html">ImageGS</a></div><div class="ttdef"><b>Definition:</b> imageGS.h:2</div></div>
-<div class="ttc" id="astructMatrixGS_html_a953e06d75a2e46e45902a7ab06fc27bd"><div class="ttname"><a href="structMatrixGS.html#a953e06d75a2e46e45902a7ab06fc27bd">MatrixGS::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> imageGS.h:9</div></div>
-<div class="ttc" id="aimageGS_8h_html_af4a0237cc2073375e38bdba34a32ac0c"><div class="ttname"><a href="imageGS_8h.html#af4a0237cc2073375e38bdba34a32ac0c">loadFileGS</a></div><div class="ttdeci">MatrixGS * loadFileGS(char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:22</div></div>
-<div class="ttc" id="astructMatrixGS_html"><div class="ttname"><a href="structMatrixGS.html">MatrixGS</a></div><div class="ttdef"><b>Definition:</b> imageGS.h:6</div></div>
-<div class="ttc" id="aimageGS_8h_html_a36918b7c4fa49fccb757d5ba11914443"><div class="ttname"><a href="imageGS_8h.html#a36918b7c4fa49fccb757d5ba11914443">color2bin</a></div><div class="ttdeci">void color2bin(MatrixGS *gs, char *tsh, char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:60</div></div>
-<div class="ttc" id="astructMatrixGS_html_a9c1133c595dd69b3f09a2ce3c980b4b4"><div class="ttname"><a href="structMatrixGS.html#a9c1133c595dd69b3f09a2ce3c980b4b4">MatrixGS::n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> imageGS.h:8</div></div>
-<div class="ttc" id="astructMatrixGS_html_aa5f4def49b3e400a792d24efc09b402d"><div class="ttname"><a href="structMatrixGS.html#aa5f4def49b3e400a792d24efc09b402d">MatrixGS::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> imageGS.h:10</div></div>
+<div class="ttc" id="astructImageGS_html_a406483f4651ec90a45fcf67c066f9642"><div class="ttname"><a href="structImageGS.html#a406483f4651ec90a45fcf67c066f9642">ImageGS::g</a></div><div class="ttdeci">unsigned char g</div><div class="ttdef"><b>Definition:</b> imageGS.h:9</div></div>
+<div class="ttc" id="astructMatrixGS_html_a45cac864e7edc4e714478b882fc38ab7"><div class="ttname"><a href="structMatrixGS.html#a45cac864e7edc4e714478b882fc38ab7">MatrixGS::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> imageGS.h:21</div></div>
+<div class="ttc" id="aimageGS_8h_html_acbac44f4cacb1e482c2227a0c6659cba"><div class="ttname"><a href="imageGS_8h.html#acbac44f4cacb1e482c2227a0c6659cba">createMatrixGS</a></div><div class="ttdeci">MatrixGS * createMatrixGS(int rows, int columns)</div><div class="ttdef"><b>Definition:</b> imageGS.c:13</div></div>
+<div class="ttc" id="astructMatrixGS_html_a1fbc24acc01b532ee8f186a823a2e5e5"><div class="ttname"><a href="structMatrixGS.html#a1fbc24acc01b532ee8f186a823a2e5e5">MatrixGS::data</a></div><div class="ttdeci">ImageGS * data</div><div class="ttdef"><b>Definition:</b> imageGS.h:17</div></div>
+<div class="ttc" id="aimageGS_8h_html_a01f421942b15af130257aae0cb55993e"><div class="ttname"><a href="imageGS_8h.html#a01f421942b15af130257aae0cb55993e">saveFileGS</a></div><div class="ttdeci">void saveFileGS(MatrixGS *gs, char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:58</div></div>
+<div class="ttc" id="aimageGS_8h_html_a47a5af2b2559007637f2fe47b6d6c4c8"><div class="ttname"><a href="imageGS_8h.html#a47a5af2b2559007637f2fe47b6d6c4c8">intensityGS</a></div><div class="ttdeci">void intensityGS(MatrixGS *gs, char inten, char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:119</div></div>
+<div class="ttc" id="astructImageGS_html"><div class="ttname"><a href="structImageGS.html">ImageGS</a></div><div class="ttdef"><b>Definition:</b> imageGS.h:7</div></div>
+<div class="ttc" id="astructMatrixGS_html_a953e06d75a2e46e45902a7ab06fc27bd"><div class="ttname"><a href="structMatrixGS.html#a953e06d75a2e46e45902a7ab06fc27bd">MatrixGS::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> imageGS.h:19</div></div>
+<div class="ttc" id="aimageGS_8h_html_af4a0237cc2073375e38bdba34a32ac0c"><div class="ttname"><a href="imageGS_8h.html#af4a0237cc2073375e38bdba34a32ac0c">loadFileGS</a></div><div class="ttdeci">MatrixGS * loadFileGS(char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:33</div></div>
+<div class="ttc" id="astructMatrixGS_html"><div class="ttname"><a href="structMatrixGS.html">MatrixGS</a></div><div class="ttdef"><b>Definition:</b> imageGS.h:15</div></div>
+<div class="ttc" id="aimageGS_8h_html_ab29a8117245ad2404e02069447f78494"><div class="ttname"><a href="imageGS_8h.html#ab29a8117245ad2404e02069447f78494">filterGS</a></div><div class="ttdeci">void filterGS(MatrixGS *gs, char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:149</div></div>
+<div class="ttc" id="aimageGS_8h_html_a521d79ad9acfa9bdb2ee3664d492bc9f"><div class="ttname"><a href="imageGS_8h.html#a521d79ad9acfa9bdb2ee3664d492bc9f">gray2bin</a></div><div class="ttdeci">void gray2bin(MatrixGS *gs, char *tsh, char *name)</div><div class="ttdef"><b>Definition:</b> imageGS.c:75</div></div>
+<div class="ttc" id="astructMatrixGS_html_aa5f4def49b3e400a792d24efc09b402d"><div class="ttname"><a href="structMatrixGS.html#aa5f4def49b3e400a792d24efc09b402d">MatrixGS::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> imageGS.h:23</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

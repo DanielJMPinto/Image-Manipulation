@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['savefilebi_59',['saveFileBi',['../imageBi_8c.html#a005fc88c94dfe539891764f6ffa574e3',1,'saveFileBi(MatrixBi *bi, char *name):&#160;imageBi.c'],['../imageBi_8h.html#a005fc88c94dfe539891764f6ffa574e3',1,'saveFileBi(MatrixBi *bi, char *name):&#160;imageBi.c']]],
-  ['savefilegs_60',['saveFileGS',['../imageGS_8c.html#a01f421942b15af130257aae0cb55993e',1,'saveFileGS(MatrixGS *gs, char *name):&#160;imageGS.c'],['../imageGS_8h.html#a01f421942b15af130257aae0cb55993e',1,'saveFileGS(MatrixGS *gs, char *name):&#160;imageGS.c']]],
-  ['savefilergb_61',['saveFileRGB',['../imageRGB_8c.html#a94c9cc8d3f6d5995fd1fd8d4036a12b8',1,'saveFileRGB(MatrixRGB *rgb, char *name):&#160;imageRGB.c'],['../imageRGB_8h.html#abbcdca44aeb85d22e8d2188893cb9407',1,'saveFileRGB(MatrixRGB *v, char *name):&#160;imageRGB.c']]]
+  ['loadfilebi_58',['loadFileBi',['../imageBi_8c.html#ae9c64aadd1f7745a195073ad28243a82',1,'loadFileBi(char *name):&#160;imageBi.c'],['../imageBi_8h.html#ae9c64aadd1f7745a195073ad28243a82',1,'loadFileBi(char *name):&#160;imageBi.c']]],
+  ['loadfilegs_59',['loadFileGS',['../imageGS_8c.html#af4a0237cc2073375e38bdba34a32ac0c',1,'loadFileGS(char *name):&#160;imageGS.c'],['../imageGS_8h.html#af4a0237cc2073375e38bdba34a32ac0c',1,'loadFileGS(char *name):&#160;imageGS.c']]],
+  ['loadfilergb_60',['loadFileRGB',['../imageRGB_8c.html#a84c3dde1302f4992db51fb20b8b9c1fe',1,'loadFileRGB(char *name):&#160;imageRGB.c'],['../imageRGB_8h.html#a84c3dde1302f4992db51fb20b8b9c1fe',1,'loadFileRGB(char *name):&#160;imageRGB.c']]]
 ];
