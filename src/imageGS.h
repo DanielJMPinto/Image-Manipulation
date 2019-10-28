@@ -22,4 +22,6 @@ void gray2bin(MatrixGS * gs, char * tsh, char * name);
 
 void intensityGS(MatrixGS *gs, char inten, char *name);
 
+void filterGS(MatrixGS *gs, char *name);
+
 #endif //INC_00_IMAGEGS_H

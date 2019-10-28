@@ -114,3 +114,64 @@ void intensityGS(MatrixGS *gs, char inten, char *name)
     
     saveFileGS(gsint, name);
 }
+
+void filterGS(MatrixGS *gs, char *name)
+{
+    ImageGS * px = gs->data;
+
+    MatrixGS * gsfil = createMatrixGS(gs->width, gs->height);
+    ImageGS * px2 = gsfil->data;
+
+    char count = 1;
+
+
+    for(int i = 0; i < gsfil->size; i++){
+
+        //cantos da imagem. vai buscar 4 a volta do pixel atual
+        if(count == 1)
+        {
+            px2->g = px->g / 4 + (px+1)->g / 4 + (px+gs->width)->g / 4 + (px+gs->width+1)->g / 4;
+        }
+        else if (count == gs->width )
+        {
+            px2->g = px->g / 4 + (px-1)->g / 4 + (px+gs->width)->g / 4 + (px+gs->width-1)->g / 4;
+        }
+        else if (count == gs->size - gs->width)
+        {
+            px2->g = px->g / 4 + (px+1)->g / 4 + (px-gs->width)->g / 4 + (px-gs->width+1)->g / 4;
+        }
+        else if (count == gs->size)
+        {
+            px2->g = px->g / 4 + (px-1)->g / 4 + (px-gs->width)->g / 4 + (px-gs->width-1)->g / 4;
+        }
+        //linhas e colunas. vai buscar os 6 pixeis a volta
+        else if (count < gs->width)
+        {
+            px2->g = (px-1)->g / 6 + px->g / 6 + (px+1)->g / 6 + (px+gs->width-1)->g / 6 + (px+gs->width)->g / 6 + (px+gs->width+1)->g / 6;
+        }
+        else if (count > gs->size - gs->width && count < gs->size)
+        {
+            px2->g = (px-1)->g / 6 + px->g / 6 + (px+1)->g / 6 + (px-gs->width-1)->g / 6 + (px-gs->width)->g / 6 + (px-gs->width+1)->g / 6;
+        }
+        else if ((count-1) % gs->width == 0 )
+        {
+            px2->g = (px-gs->width)->g / 6 + (px-gs->width+1)->g / 6 + px->g / 6 + (px+1)->g / 6 + (px+gs->width)->g / 6 + (px+gs->width+1)->g / 6;
+        }
+        else if (count % gs->width == 0 )
+        {
+            px2->g = (px-gs->width-1)->g / 6 + (px-gs->width)->g / 6 + (px-1)->g / 6 + px->g / 6 + (px+gs->width-1)->g / 6 + (px+gs->width)->g / 6;
+        }
+        //pixeis no centro da imagem
+        else
+        {
+            px2->g = (px-gs->width-1)->g / 9 + (px-gs->width)->g / 9 + (px-gs->width+1)->g / 9 + (px-1)->g / 9 + px->g / 9 + (px+1)->g / 9 + (px+gs->width-1)->g / 9 + (px+gs->width)->g / 9 + (px+gs->width+1)->g / 9;
+        }
+        
+        count++;
+        px++;
+        px2++;
+        
+    }
+    
+    saveFileGS(gsfil, name);
+}

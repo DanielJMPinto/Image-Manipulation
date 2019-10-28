@@ -24,4 +24,6 @@ void printMatrix(MatrixRGB * dm);
 
 void intensityRGB(MatrixRGB *rgb, char inten, char *name);
 
+void filterRGB(MatrixRGB *rgb, char *name);
+
 #endif //INC_00_IMAGERGB_H

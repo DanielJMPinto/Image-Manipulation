@@ -16,12 +16,16 @@ int main(int argc, char** argv[])
 	MatrixRGB *rgb = loadFileRGB(filename);
 
     color2gray(rgb, "../res/pgm/salvar_gs.pgm");
-	
+
 	MatrixGS *gs = loadFileGS("../res/pgm/salvar_gs.pgm");
 
 	intensityRGB(rgb, 50, "../res/ppm/intensity_change.ppm");
 
 	intensityGS(gs, 50, "../res/pgm/intensity_change.pgm");
+
+	filterRGB(rgb, "../res/ppm/filter_media.ppm");
+
+	filterGS(gs, "../res/pgm/filter_media.pgm");
 	//gray2bin(gs, 70, "../res/pbm/salvar_bin.pgm");
 
 	

@@ -139,3 +139,82 @@ void intensityRGB(MatrixRGB *rgb, char inten, char *name)
     
     saveFileRGB(rgbint, name);
 }
+
+void filterRGB(MatrixRGB *rgb, char *name)
+{
+    ImageRGB * px = rgb->data;
+
+    MatrixRGB * rgbfil = createMatrixRGB(rgb->width, rgb->height);
+    ImageRGB * px2 = rgbfil->data;
+
+    char count = 1;
+
+
+    for(int i = 0; i < rgbfil->size; i++){
+
+        //cantos da imagem. vai buscar 4 a volta do pixel atual
+        if(count == 1)
+        {
+            px2->r = px->r / 4 + (px+1)->r / 4 + (px+rgb->width)->r / 4 + (px+rgb->width+1)->r / 4;
+            px2->g = px->g / 4 + (px+1)->g / 4 + (px+rgb->width)->g / 4 + (px+rgb->width+1)->g / 4;
+            px2->b = px->b / 4 + (px+1)->b / 4 + (px+rgb->width)->b / 4 + (px+rgb->width+1)->b / 4;
+        }
+        else if (count == rgb->width )
+        {
+            px2->r = px->r / 4 + (px-1)->r / 4 + (px+rgb->width)->r / 4 + (px+rgb->width-1)->r / 4;
+            px2->g = px->g / 4 + (px-1)->g / 4 + (px+rgb->width)->g / 4 + (px+rgb->width-1)->g / 4;
+            px2->b = px->b / 4 + (px-1)->b / 4 + (px+rgb->width)->b / 4 + (px+rgb->width-1)->b / 4;
+        }
+        else if (count == rgb->size - rgb->width)
+        {
+            px2->r = px->r / 4 + (px+1)->r / 4 + (px-rgb->width)->r / 4 + (px-rgb->width+1)->r / 4;
+            px2->g = px->g / 4 + (px+1)->g / 4 + (px-rgb->width)->g / 4 + (px-rgb->width+1)->g / 4;
+            px2->b = px->b / 4 + (px+1)->b / 4 + (px-rgb->width)->b / 4 + (px-rgb->width+1)->b / 4;
+        }
+        else if (count == rgb->size)
+        {
+            px2->r = px->r / 4 + (px-1)->r / 4 + (px-rgb->width)->r / 4 + (px-rgb->width-1)->r / 4;
+            px2->g = px->g / 4 + (px-1)->g / 4 + (px-rgb->width)->g / 4 + (px-rgb->width-1)->g / 4;
+            px2->b = px->b / 4 + (px-1)->b / 4 + (px-rgb->width)->b / 4 + (px-rgb->width-1)->b / 4;
+        }
+        //linhas e colunas. vai buscar os 6 pixeis a volta
+        else if (count < rgb->width)
+        {
+            px2->r = (px-1)->r / 6 + px->r / 6 + (px+1)->r / 6 + (px+rgb->width-1)->r / 6 + (px+rgb->width)->r / 6 + (px+rgb->width+1)->r / 6;
+            px2->g = (px-1)->g / 6 + px->g / 6 + (px+1)->g / 6 + (px+rgb->width-1)->g / 6 + (px+rgb->width)->g / 6 + (px+rgb->width+1)->g / 6;
+            px2->b = (px-1)->b / 6 + px->b / 6 + (px+1)->b / 6 + (px+rgb->width-1)->b / 6 + (px+rgb->width)->b / 6 + (px+rgb->width+1)->b / 6;
+        }
+        else if (count > rgb->size - rgb->width && count < rgb->size)
+        {
+            px2->r = (px-1)->r / 6 + px->r / 6 + (px+1)->r / 6 + (px-rgb->width-1)->r / 6 + (px-rgb->width)->r / 6 + (px-rgb->width+1)->r / 6;
+            px2->g = (px-1)->g / 6 + px->g / 6 + (px+1)->g / 6 + (px-rgb->width-1)->g / 6 + (px-rgb->width)->g / 6 + (px-rgb->width+1)->g / 6;
+            px2->b = (px-1)->b / 6 + px->b / 6 + (px+1)->b / 6 + (px-rgb->width-1)->b / 6 + (px-rgb->width)->b / 6 + (px-rgb->width+1)->b / 6;
+        }
+        else if ((count-1) % rgb->width == 0 )
+        {
+            px2->r = (px-rgb->width)->r / 6 + (px-rgb->width+1)->r / 6 + px->r / 6 + (px+1)->r / 6 + (px+rgb->width)->r / 6 + (px+rgb->width+1)->r / 6;
+            px2->g = (px-rgb->width)->g / 6 + (px-rgb->width+1)->g / 6 + px->g / 6 + (px+1)->g / 6 + (px+rgb->width)->g / 6 + (px+rgb->width+1)->g / 6;
+            px2->b = (px-rgb->width)->b / 6 + (px-rgb->width+1)->b / 6 + px->b / 6 + (px+1)->b / 6 + (px+rgb->width)->b / 6 + (px+rgb->width+1)->b / 6;
+        }
+        else if (count % rgb->width == 0 )
+        {
+            px2->r = (px-rgb->width-1)->r / 6 + (px-rgb->width)->r / 6 + (px-1)->r / 6 + px->r / 6 + (px+rgb->width-1)->r / 6 + (px+rgb->width)->r / 6;
+            px2->g = (px-rgb->width-1)->g / 6 + (px-rgb->width)->g / 6 + (px-1)->g / 6 + px->g / 6 + (px+rgb->width-1)->g / 6 + (px+rgb->width)->g / 6;
+            px2->b = (px-rgb->width-1)->b / 6 + (px-rgb->width)->b / 6 + (px-1)->b / 6 + px->b / 6 + (px+rgb->width-1)->b / 6 + (px+rgb->width)->b / 6;
+        }
+        //pixeis no centro da imagem
+        else
+        {
+            px2->r = (px-rgb->width-1)->r / 9 + (px-rgb->width)->r / 9 + (px-rgb->width+1)->r / 9 + (px-1)->r / 9 + px->r / 9 + (px+1)->r / 9 + (px+rgb->width-1)->r / 9 + (px+rgb->width)->r / 9 + (px+rgb->width+1)->r / 9;
+            px2->g = (px-rgb->width-1)->g / 9 + (px-rgb->width)->g / 9 + (px-rgb->width+1)->g / 9 + (px-1)->g / 9 + px->g / 9 + (px+1)->g / 9 + (px+rgb->width-1)->g / 9 + (px+rgb->width)->g / 9 + (px+rgb->width+1)->g / 9;
+            px2->b = (px-rgb->width-1)->b / 9 + (px-rgb->width)->b / 9 + (px-rgb->width+1)->b / 9 + (px-1)->b / 9 + px->b / 9 + (px+1)->b / 9 + (px+rgb->width-1)->b / 9 + (px+rgb->width)->b / 9 + (px+rgb->width+1)->b / 9;
+        }
+        
+        count++;
+        px++;
+        px2++;
+        
+    }
+    
+    saveFileRGB(rgbfil, name);
+}
