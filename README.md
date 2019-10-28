@@ -4,10 +4,10 @@ Image manipulation project using c language.
 Its main purpose is to manipulate images in the pnm format.
 
 # Usage
-```
+```bash
 $ cd src
 $ make
-$ ./ppmtesting *IMAGE_FILE*
+$ ./ppmtesting IMAGE_FILE
 ```
 
 # Reference links for the image formats:
