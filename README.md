@@ -14,8 +14,13 @@ The program tests two images: lena.ppm and baboon.ppm
 ```bash
 $ cd src
 $ make
-$ ./ppmtesting
+$ ./ppmtesting -t VALUE -i VALUE
 ```
+
+-t - threshold value
+-i - increase intensity value
+-d - decrease intensity value
+
 At the end of the program execution, the files with changes can be found int corresponding format folders in /res
 
 # Problems
