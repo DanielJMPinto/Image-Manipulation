@@ -33,11 +33,19 @@ MatrixGS * createMatrixGS(int rows, int columns)
 MatrixGS * loadFileGS(char *name)
 {
     FILE *fp = fopen(name, "rb");
+    if (!fp) {
+        fprintf(stderr, "Unable to open file '%s'\n", name);
+        exit(1);
+    }
     
     int width, height, max_color;
     char buffer[10];
 
 	fgets(buffer, sizeof(buffer), fp);
+    if (buffer[0] != 'P' || buffer[1] != '5') {
+         fprintf(stderr, "Invalid image format (must be 'P5')\n");
+         exit(1);
+    }
 	fscanf(fp, "%d %d", &width, &height);
 	
     fscanf(fp, "%d", &max_color);
@@ -205,4 +213,38 @@ void filterGS(MatrixGS *gs, char *name)
     }
     
     saveFileGS(gsfil, name);
+}
+
+/**
+ * Applies a watermark to a grayscale image
+ * 
+ * @param gs Matrix of pixels
+ * @param name Name of the file in which the new image with the watermark will be stored
+ */
+void watermarkGS(MatrixGS* gs, char* name){
+    ImageGS * px = gs->data;
+
+    MatrixGS * wt = loadFileGS("../res/watermark/watermark.pgm");
+    ImageGS * px2 = wt->data;
+    int altura=0;
+    int largura=0;
+
+    for(int i = 0; i < gs->size; i++){
+        
+        if (gs->height - altura <= wt->height && gs->width - largura <= wt->width ){
+            if(px2->g == 0){
+                px->g = px->g * 0.55 + px2->g * 0.45;
+            }
+            px2++;
+        }
+
+        largura++;
+        if(largura == gs->width){
+            largura = 0;
+            altura++;
+        }
+        px++;
+    }
+    
+    saveFileGS(gs, name);
 }

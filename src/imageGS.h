@@ -71,4 +71,12 @@ void intensityGS(MatrixGS *gs, char inten, char *name);
  */
 void filterGS(MatrixGS *gs, char *name);
 
+/**
+ * Applies a watermark to a grayscale image
+ * 
+ * @param gs Matrix of pixels
+ * @param name Name of the file in which the new image with the watermark will be stored
+ */
+void watermarkGS(MatrixGS* gs, char* name);
+
 #endif //INC_00_IMAGEGS_H

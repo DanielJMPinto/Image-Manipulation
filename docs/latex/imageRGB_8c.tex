@@ -18,6 +18,8 @@ void \mbox{\hyperlink{imageRGB_8c_af38a4578b5b8126dce4fd65e71d49478}{color2gray}
 void \mbox{\hyperlink{imageRGB_8c_abf25f3ad50fa34874ffd202670550bf1}{intensity\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char inten, char $\ast$name)
 \item 
 void \mbox{\hyperlink{imageRGB_8c_a1922b5f5bd5ee183bf26d91401bbde98}{filter\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageRGB_8c_a23014e3b6e14d56a5eefeb6ad560124d}{watermark\+R\+GB}} (\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$rgb, char $\ast$name)
 \end{DoxyCompactItemize}
 
 
@@ -73,7 +75,7 @@ Applies a Mean filter to a ppm image
 \doxysubsubsection{\texorpdfstring{intensityRGB()}{intensityRGB()}}
 {\footnotesize\ttfamily void intensity\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char}]{inten,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
-Changes the intensity of a ppm image
+Changes the intensif (!fp) \{ fprintf(stderr, \char`\"{}\+Unable to open file \textquotesingle{}\%s\textquotesingle{}\textbackslash{}n\char`\"{}, name); exit(1); \}ity of a ppm image
 
 
 \begin{DoxyParams}{Parameters}
@@ -110,5 +112,20 @@ Saves a file in the ppm format
 {\em rgb} & Matrix of pixels to be saved in ppm format \\
 \hline
 {\em name} & Name of the file in which the matrix will be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageRGB_8c_a23014e3b6e14d56a5eefeb6ad560124d}\label{imageRGB_8c_a23014e3b6e14d56a5eefeb6ad560124d}} 
+\index{imageRGB.c@{imageRGB.c}!watermarkRGB@{watermarkRGB}}
+\index{watermarkRGB@{watermarkRGB}!imageRGB.c@{imageRGB.c}}
+\doxysubsubsection{\texorpdfstring{watermarkRGB()}{watermarkRGB()}}
+{\footnotesize\ttfamily void watermark\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixRGB}{Matrix\+R\+GB}} $\ast$}]{rgb,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Applies a watermark to a ppm image
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & Matrix of pixels \\
+\hline
+{\em name} & Name of the file in which the new image with the watermark will be stored \\
 \hline
 \end{DoxyParams}

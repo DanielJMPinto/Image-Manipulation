@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['savefilebi_65',['saveFileBi',['../imageBi_8c.html#a005fc88c94dfe539891764f6ffa574e3',1,'saveFileBi(MatrixBi *bi, char *name):&#160;imageBi.c'],['../imageBi_8h.html#a005fc88c94dfe539891764f6ffa574e3',1,'saveFileBi(MatrixBi *bi, char *name):&#160;imageBi.c']]],
-  ['savefilegs_66',['saveFileGS',['../imageGS_8c.html#a01f421942b15af130257aae0cb55993e',1,'saveFileGS(MatrixGS *gs, char *name):&#160;imageGS.c'],['../imageGS_8h.html#a01f421942b15af130257aae0cb55993e',1,'saveFileGS(MatrixGS *gs, char *name):&#160;imageGS.c']]],
-  ['savefilergb_67',['saveFileRGB',['../imageRGB_8c.html#a94c9cc8d3f6d5995fd1fd8d4036a12b8',1,'saveFileRGB(MatrixRGB *rgb, char *name):&#160;imageRGB.c'],['../imageRGB_8h.html#abbcdca44aeb85d22e8d2188893cb9407',1,'saveFileRGB(MatrixRGB *v, char *name):&#160;imageRGB.c']]]
+  ['watermarkgs_67',['watermarkGS',['../imageGS_8c.html#a4dbca107fa969a4e879bc2c254bdd774',1,'watermarkGS(MatrixGS *gs, char *name):&#160;imageGS.c'],['../imageGS_8h.html#a4dbca107fa969a4e879bc2c254bdd774',1,'watermarkGS(MatrixGS *gs, char *name):&#160;imageGS.c']]],
+  ['watermarkrgb_68',['watermarkRGB',['../imageRGB_8c.html#a23014e3b6e14d56a5eefeb6ad560124d',1,'watermarkRGB(MatrixRGB *rgb, char *name):&#160;imageRGB.c'],['../imageRGB_8h.html#a23014e3b6e14d56a5eefeb6ad560124d',1,'watermarkRGB(MatrixRGB *rgb, char *name):&#160;imageRGB.c']]]
 ];

@@ -32,11 +32,19 @@ MatrixBi * createMatrixBi(int rows, int columns)
 MatrixBi * loadFileBi(char *name)
 {
     FILE *fp = fopen(name, "rb");
+    if (!fp) {
+        fprintf(stderr, "Unable to open file '%s'\n", name);
+        exit(1);
+    }
     
     int width, height;
     char buffer[10];
 
 	fgets(buffer, sizeof(buffer), fp);
+    if (buffer[0] != 'P' || buffer[1] != '4') {
+         fprintf(stderr, "Invalid image format (must be 'P4')\n");
+         exit(1);
+    }
 	fscanf(fp, "%d %d", &width, &height);
 	
     fgets(buffer, sizeof(buffer), fp);

@@ -32,11 +32,19 @@ MatrixRGB * createMatrixRGB(int rows, int columns)
 MatrixRGB * loadFileRGB(char *name)
 {
     FILE *fp = fopen(name, "rb");
+    if (!fp) {
+        fprintf(stderr, "Unable to open file '%s'\n", name);
+        exit(1);
+    }
 
     int width, height, max_color;
     char buffer[10];
 
 	fgets(buffer, sizeof(buffer), fp);
+    if (buffer[0] != 'P' || buffer[1] != '6') {
+         fprintf(stderr, "Invalid image format (must be 'P6')\n");
+         exit(1);
+    }
 	fscanf(fp, "%d %d", &width, &height);
 	
     fscanf(fp, "%d", &max_color);
@@ -108,7 +116,10 @@ void color2gray(MatrixRGB *rgb, char *name)
 }
 
 /**
- * Changes the intensity of a ppm image
+ * Changes the intensif (!fp) {
+        fprintf(stderr, "Unable to open file '%s'\n", name);
+        exit(1);
+    }ity of a ppm image
  * 
  * @param rgb Matrix of pixels
  * @param inten Value to be added to each pixel in order to change the intensity of the image
@@ -239,4 +250,40 @@ void filterRGB(MatrixRGB *rgb, char *name)
     }
     
     saveFileRGB(rgbfil, name);
+}
+
+/**
+ * Applies a watermark to a ppm image
+ * 
+ * @param rgb Matrix of pixels
+ * @param name Name of the file in which the new image with the watermark will be stored
+ */
+void watermarkRGB(MatrixRGB* rgb, char* name){
+    ImageRGB * px = rgb->data;
+
+    MatrixGS * wt = loadFileGS("../res/watermark/watermark.pgm");
+    ImageGS * px2 = wt->data;
+    int altura=0;
+    int largura=0;
+
+    for(int i = 0; i < rgb->size; i++){
+        
+        if (rgb->height - altura <= wt->height && rgb->width - largura <= wt->width ){
+            if(px2->g == 0){
+                px->r = px->r * 0.55 + px2->g * 0.45;
+                px->g = px->g * 0.55 + px2->g * 0.45;
+                px->b = px->b * 0.55 + px2->g * 0.45;
+            }
+            px2++;
+        }
+
+        largura++;
+        if(largura == rgb->width){
+            largura = 0;
+            altura++;
+        }
+        px++;
+    }
+    
+    saveFileRGB(rgb, name);
 }

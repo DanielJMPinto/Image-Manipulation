@@ -110,6 +110,8 @@ Functions</h2></td></tr>
 <tr class="separator:abf25f3ad50fa34874ffd202670550bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1922b5f5bd5ee183bf26d91401bbde98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageRGB_8c.html#a1922b5f5bd5ee183bf26d91401bbde98">filterRGB</a> (<a class="el" href="structMatrixRGB.html">MatrixRGB</a> *rgb, char *name)</td></tr>
 <tr class="separator:a1922b5f5bd5ee183bf26d91401bbde98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23014e3b6e14d56a5eefeb6ad560124d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageRGB_8c.html#a23014e3b6e14d56a5eefeb6ad560124d">watermarkRGB</a> (<a class="el" href="structMatrixRGB.html">MatrixRGB</a> *rgb, char *name)</td></tr>
+<tr class="separator:a23014e3b6e14d56a5eefeb6ad560124d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="af38a4578b5b8126dce4fd65e71d49478"></a>
@@ -251,7 +253,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Changes the intensity of a ppm image</p>
+<p>Changes the intensif (!fp) { fprintf(stderr, "Unable to open file '%s'\n", name); exit(1); }ity of a ppm image</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rgb</td><td>Matrix of pixels </td></tr>
@@ -318,6 +320,42 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">rgb</td><td>Matrix of pixels to be saved in ppm format </td></tr>
     <tr><td class="paramname">name</td><td>Name of the file in which the matrix will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a23014e3b6e14d56a5eefeb6ad560124d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23014e3b6e14d56a5eefeb6ad560124d">&#9670;&nbsp;</a></span>watermarkRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void watermarkRGB </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrixRGB.html">MatrixRGB</a> *&#160;</td>
+          <td class="paramname"><em>rgb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies a watermark to a ppm image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td>Matrix of pixels </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the new image with the watermark will be stored </td></tr>
   </table>
   </dd>
 </dl>

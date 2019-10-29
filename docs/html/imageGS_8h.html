@@ -116,6 +116,8 @@ Functions</h2></td></tr>
 <tr class="separator:a47a5af2b2559007637f2fe47b6d6c4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29a8117245ad2404e02069447f78494"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageGS_8h.html#ab29a8117245ad2404e02069447f78494">filterGS</a> (<a class="el" href="structMatrixGS.html">MatrixGS</a> *gs, char *name)</td></tr>
 <tr class="separator:ab29a8117245ad2404e02069447f78494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dbca107fa969a4e879bc2c254bdd774"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imageGS_8h.html#a4dbca107fa969a4e879bc2c254bdd774">watermarkGS</a> (<a class="el" href="structMatrixGS.html">MatrixGS</a> *gs, char *name)</td></tr>
+<tr class="separator:a4dbca107fa969a4e879bc2c254bdd774"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="acbac44f4cacb1e482c2227a0c6659cba"></a>
@@ -330,6 +332,42 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">gs</td><td>Matrix of pixels to be saved in pgm format </td></tr>
     <tr><td class="paramname">name</td><td>Name of the file in which the matrix will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4dbca107fa969a4e879bc2c254bdd774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dbca107fa969a4e879bc2c254bdd774">&#9670;&nbsp;</a></span>watermarkGS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void watermarkGS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrixGS.html">MatrixGS</a> *&#160;</td>
+          <td class="paramname"><em>gs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies a watermark to a grayscale image</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gs</td><td>Matrix of pixels </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the file in which the new image with the watermark will be stored </td></tr>
   </table>
   </dd>
 </dl>

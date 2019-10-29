@@ -2,6 +2,8 @@
 #include "imageRGB.h"
 #include "imageGS.h"
 #include "imageBi.h"
+#include <string.h>
+#include <stdlib.h>
 
 /** \mainpage <h1>Image Processing</h1>
  * 
@@ -19,15 +21,14 @@
  */
 
 /**
- * @brief Main program 
+ * Main program 
  */
 
 int main(int argc, char** argv[])
 {	
 
 	char *filename = argv[1];
-	//printf("%s \n", filename);
-	//printf("%s \n", "every time a seg fault happens, my life is shorten by a day");
+
 	MatrixRGB *rgb = loadFileRGB(filename);
 
     color2gray(rgb, "../res/pgm/salvar_gs.pgm");
@@ -43,6 +44,9 @@ int main(int argc, char** argv[])
 	filterGS(gs, "../res/pgm/filter_media.pgm");
 	//gray2bin(gs, 70, "../res/pbm/salvar_bin.pgm");
 
+	watermarkRGB(rgb, "../res/ppm/watermarked_rgb.ppm");
+
+	watermarkGS(gs, "../res/pgm/watermarked_gs.pgm");
 	
     return 0;
 }

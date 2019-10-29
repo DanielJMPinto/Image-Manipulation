@@ -21,6 +21,8 @@ void \mbox{\hyperlink{imageGS_8h_a521d79ad9acfa9bdb2ee3664d492bc9f}{gray2bin}} (
 void \mbox{\hyperlink{imageGS_8h_a47a5af2b2559007637f2fe47b6d6c4c8}{intensity\+GS}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char inten, char $\ast$name)
 \item 
 void \mbox{\hyperlink{imageGS_8h_ab29a8117245ad2404e02069447f78494}{filter\+GS}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char $\ast$name)
+\item 
+void \mbox{\hyperlink{imageGS_8h_a4dbca107fa969a4e879bc2c254bdd774}{watermark\+GS}} (\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$gs, char $\ast$name)
 \end{DoxyCompactItemize}
 
 
@@ -113,5 +115,20 @@ Saves a file in the pgm format
 {\em gs} & Matrix of pixels to be saved in pgm format \\
 \hline
 {\em name} & Name of the file in which the matrix will be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{imageGS_8h_a4dbca107fa969a4e879bc2c254bdd774}\label{imageGS_8h_a4dbca107fa969a4e879bc2c254bdd774}} 
+\index{imageGS.h@{imageGS.h}!watermarkGS@{watermarkGS}}
+\index{watermarkGS@{watermarkGS}!imageGS.h@{imageGS.h}}
+\doxysubsubsection{\texorpdfstring{watermarkGS()}{watermarkGS()}}
+{\footnotesize\ttfamily void watermark\+GS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrixGS}{Matrix\+GS}} $\ast$}]{gs,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Applies a watermark to a grayscale image
+
+
+\begin{DoxyParams}{Parameters}
+{\em gs} & Matrix of pixels \\
+\hline
+{\em name} & Name of the file in which the new image with the watermark will be stored \\
 \hline
 \end{DoxyParams}

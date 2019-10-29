@@ -75,4 +75,12 @@ void intensityRGB(MatrixRGB *rgb, char inten, char *name);
  */
 void filterRGB(MatrixRGB *rgb, char *name);
 
+/**
+ * Applies a watermark to a ppm image
+ * 
+ * @param rgb Matrix of pixels
+ * @param name Name of the file in which the new image with the watermark will be stored
+ */
+void watermarkRGB(MatrixRGB* rgb, char* name);
+
 #endif //INC_00_IMAGERGB_H

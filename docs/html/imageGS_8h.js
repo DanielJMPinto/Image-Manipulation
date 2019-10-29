@@ -7,5 +7,6 @@ var imageGS_8h =
     [ "gray2bin", "imageGS_8h.html#a521d79ad9acfa9bdb2ee3664d492bc9f", null ],
     [ "intensityGS", "imageGS_8h.html#a47a5af2b2559007637f2fe47b6d6c4c8", null ],
     [ "loadFileGS", "imageGS_8h.html#af4a0237cc2073375e38bdba34a32ac0c", null ],
-    [ "saveFileGS", "imageGS_8h.html#a01f421942b15af130257aae0cb55993e", null ]
+    [ "saveFileGS", "imageGS_8h.html#a01f421942b15af130257aae0cb55993e", null ],
+    [ "watermarkGS", "imageGS_8h.html#a4dbca107fa969a4e879bc2c254bdd774", null ]
 ];
