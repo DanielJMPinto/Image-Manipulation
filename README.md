@@ -16,7 +16,7 @@ $ cd src
 $ make
 $ ./ppmtesting
 ```
-At the end of the program execution, the files with changes can be found int corresponding format folders in /res
+At the end of the program execution, the files with changes can be found in the corresponding format folders in /res
 
 # Problems
 
