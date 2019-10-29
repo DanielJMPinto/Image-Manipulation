@@ -17,8 +17,8 @@ $ make
 $ ./ppmtesting -t VALUE -i VALUE
 ```
 
--t - threshold value
--i - increase intensity value
+-t - threshold value <br>
+-i - increase intensity value <br>
 -d - decrease intensity value
 
 At the end of the program execution, the files with changes can be found in the corresponding format folders in /res
