@@ -21,7 +21,7 @@ $ ./ppmtesting -t VALUE -i VALUE
 -i - increase intensity value
 -d - decrease intensity value
 
-At the end of the program execution, the files with changes can be found int corresponding format folders in /res
+At the end of the program execution, the files with changes can be found in the corresponding format folders in /res
 
 # Problems
 
