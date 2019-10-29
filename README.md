@@ -5,7 +5,7 @@ Its main purpose is to manipulate images in the pnm format.
 
 # Authors
 Daniel Pinto, 89341 <br>
-Rodrigo Oliveira 90514
+Rodrigo Oliveira, 90514
 
 # Usage
 
