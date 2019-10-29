@@ -78,9 +78,12 @@ void saveFileRGB(MatrixRGB *rgb, char *name)
  * Converts a ppm format image into a pgm image
  * 
  * @param rgb Matrix of pixels that will be converted into grayscale
- * @param nome Name of the file in which the new image will be stored
+ * @param name Name of the file in which the new grayscale image will be stored
+ * @param name_r Name of the file in which the new grayscale image with red values will be stored
+ * @param name_g Name of the file in which the new grayscale image with green values will be stored
+ * @param name_b Name of the file in which the new grayscale image with blue values will be stored
  */
-void color2gray(MatrixRGB *rgb, char *name)
+void color2gray(MatrixRGB *rgb, char *name, char *name_r, char *name_g, char *name_b)
 {
     ImageRGB * px = rgb->data;
 
@@ -110,9 +113,9 @@ void color2gray(MatrixRGB *rgb, char *name)
     }
     
     saveFileGS(gs, name);
-    saveFileGS(gs_r, "../res/pgm/salvar_gray_red.pgm");
-    saveFileGS(gs_g, "../res/pgm/salvar_gray_green.pgm");
-    saveFileGS(gs_b, "../res/pgm/salvar_gray_blue.pgm");
+    saveFileGS(gs_r, name_r);
+    saveFileGS(gs_g, name_g);
+    saveFileGS(gs_b, name_b);
 }
 
 /**

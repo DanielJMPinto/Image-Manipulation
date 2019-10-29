@@ -24,29 +24,52 @@
  * Main program 
  */
 
-int main(int argc, char** argv[])
-{	
+int main(void)
+{	 
+	// lena.ppm
+	MatrixRGB *rgb = loadFileRGB("../res/ppm/lena.ppm");
 
-	char *filename = argv[1];
+    color2gray(rgb, "../res/pgm/lena_gs.pgm", "../res/pgm/lena_gs_r.pgm", "../res/pgm/lena_gs_g.pgm", "../res/pgm/lena_gs_b.pgm");
 
-	MatrixRGB *rgb = loadFileRGB(filename);
+	MatrixGS *gs = loadFileGS("../res/pgm/lena_gs.pgm");
 
-    color2gray(rgb, "../res/pgm/salvar_gs.pgm");
+	gray2bin(gs, 120, "../res/pbm/lena_bin.pgm");
 
-	MatrixGS *gs = loadFileGS("../res/pgm/salvar_gs.pgm");
+	intensityRGB(rgb, 70, "../res/ppm/lena_intensity_change_rgb.ppm");
 
-	intensityRGB(rgb, 50, "../res/ppm/intensity_change.ppm");
+	intensityGS(gs, -70, "../res/pgm/lena_intensity_change_gs.pgm");
 
-	intensityGS(gs, 50, "../res/pgm/intensity_change.pgm");
+	filterRGB(rgb, "../res/ppm/lena_filter_media_rgb.ppm");
 
-	filterRGB(rgb, "../res/ppm/filter_media.ppm");
+	filterGS(gs, "../res/pgm/lena_filter_media_gs.pgm");
 
-	filterGS(gs, "../res/pgm/filter_media.pgm");
-	//gray2bin(gs, 70, "../res/pbm/salvar_bin.pgm");
+	watermarkRGB(rgb, "../res/ppm/lena_watermarked_rgb.ppm");
 
-	watermarkRGB(rgb, "../res/ppm/watermarked_rgb.ppm");
+	watermarkGS(gs, "../res/pgm/lena_watermarked_gs.pgm");
 
-	watermarkGS(gs, "../res/pgm/watermarked_gs.pgm");
+	//------------------------------------------------------------
+
+	//baboon.ppm
+
+	MatrixRGB *rgb2 = loadFileRGB("../res/ppm/baboon.ppm");
+
+    color2gray(rgb2, "../res/pgm/baboon_gs.pgm", "../res/pgm/baboon_gs_r.pgm", "../res/pgm/baboon_gs_g.pgm", "../res/pgm/baboon_gs_b.pgm");
+
+	MatrixGS *gs2 = loadFileGS("../res/pgm/baboon_gs.pgm");
+
+	gray2bin(gs2, 120, "../res/pbm/baboon_bin.pgm");
+
+	intensityRGB(rgb2, 70, "../res/ppm/baboon_intensity_change_rgb.ppm");
+
+	intensityGS(gs2, -70, "../res/pgm/baboon_intensity_change_gs.pgm");
+
+	filterRGB(rgb2, "../res/ppm/baboon_filter_media_rgb.ppm");
+
+	filterGS(gs2, "../res/pgm/baboon_filter_media_gs.pgm");
+
+	watermarkRGB(rgb2, "../res/ppm/baboon_watermarked_rgb.ppm");
+
+	watermarkGS(gs2, "../res/pgm/baboon_watermarked_gs.pgm");
 	
     return 0;
 }

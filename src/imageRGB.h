@@ -55,8 +55,11 @@ void saveFileRGB(MatrixRGB *rgb, char *name);
  * 
  * @param rgb Matrix of pixels that will be converted into grayscale
  * @param nome Name of the file in which the new image will be stored
+ * @param nome_r Name of the file in which the new grayscale image with red values will be stored
+ * @param nome_g Name of the file in which the new grayscale image with green values will be stored
+ * @param nome_b Name of the file in which the new grayscale image with blue values will be stored
  */
-void color2gray(MatrixRGB *rgb, char *nome);
+void color2gray(MatrixRGB *rgb, char *nome, char *nome_r, char *nome_g, char *nome_b);
 
 /**
  * Changes the intensity of a ppm image

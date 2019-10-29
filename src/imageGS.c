@@ -80,40 +80,27 @@ void saveFileGS(MatrixGS *gs, char *name)
  * @param gs Matrix of pixels that will be converted into pbm format
  * @param nome Name of the file in which the new image will be stored
  */
-void gray2bin(MatrixGS * gs, char * tsh, char * name)
+void gray2bin(MatrixGS * gs, int tsh, char * name)
 {
     ImageGS * px = gs->data;
 
-    MatrixBi * bi = createMatrixGS(gs->width, gs->height);
-    ImageBi * px2 = bi->data;
-    int p=0 ,j = 0;
+    MatrixGS * bi = createMatrixGS(gs->width, gs->height);
+    ImageGS * px2 = bi->data;
+
     for(int i = 0; i < bi->size; i++){
         
         if(px->g < tsh){
-            p++;
-            //px2->b = ((0 << (7-count)) & 0x01);
-            px2->b=255;
+            px2->g=0;
             
         }else
         {
-            j++;
-            px2->b=0;
-            
-            
+            px2->g=255; 
         }
        
         px++;
         px2++;
-        
-        
-        
     }
-    int hist[2];
-    hist[0]=p;
-    hist[1]=j;
-    printf("p - %i\nj - %i\nsize - %d\n", p,j, bi->size);
-    printf("0 - %i\n1 - %i", hist[0], hist[1]);
-    printf("\n");
+
     saveFileGS(bi, name);
 }
 

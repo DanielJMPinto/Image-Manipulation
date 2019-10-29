@@ -41,7 +41,7 @@ MatrixBi * loadFileBi(char *name)
     char buffer[10];
 
 	fgets(buffer, sizeof(buffer), fp);
-    if (buffer[0] != 'P' || buffer[1] != '4') {
+    if (buffer[0] != 'P' || buffer[1] != '1') {
          fprintf(stderr, "Invalid image format (must be 'P4')\n");
          exit(1);
     }

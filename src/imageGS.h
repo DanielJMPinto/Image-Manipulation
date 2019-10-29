@@ -52,7 +52,7 @@ void saveFileGS(MatrixGS *gs, char *name);
  * @param gs Matrix of pixels that will be converted into pbm format
  * @param nome Name of the file in which the new image will be stored
  */
-void gray2bin(MatrixGS * gs, char * tsh, char * name);
+void gray2bin(MatrixGS * gs, int tsh, char * name);
 
 /**
  * Changes the intensity of a pgm image
